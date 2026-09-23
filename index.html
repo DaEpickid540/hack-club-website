@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mason Hack Club</title>
+  <meta name="description" content="Mason Hack Club: a student-led club exploring technology every week through workshops, hackathons, and guest speakers." />
+  <meta name="theme-color" content="#041f3b" />
+  <link rel="icon" href="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <script>
+    // Set the theme before CSS paints so there's no flash of the wrong mode
+    (function () {
+      var t;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-bs-theme", t);
+    })();
+  </script>
+  <link href="assets/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Mobile top bar -->
+  <div class="topbar d-lg-none d-flex align-items-center justify-content-between px-3 py-2">
+    <a href="index.html" class="brand">
+      <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+      <strong>Mason Hack Club</strong>
+    </a>
+    <button class="btn p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Site navigation">
+    <div class="offcanvas-header d-lg-none">
+      <span class="display-font fs-5">Menu</span>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a href="index.html" class="brand d-none d-lg-flex">
+        <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+        <span><strong>Mason Hack Club</strong><small>Mason High School</small></span>
+      </a>
+
+      <nav>
+        <p class="nav-group-label">Hack Club</p>
+        <ul class="side-nav">
+          <li><a href="index.html" class="active"><i class="bi bi-house-door"></i> About the Club</a></li>
+          <li class="sub"><a href="#who-we-are">Who we are</a></li>
+          <li class="sub"><a href="#goals">What we want to achieve</a></li>
+          <li class="sub"><a href="#accomplishments">Past accomplishments</a></li>
+          <li class="sub"><a href="#sponsors">Sponsors</a></li>
+          <li class="sub"><a href="#media">Media</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <p class="nav-group-label">Club Members</p>
+        <ul class="side-nav">
+          <li><a href="members.html"><i class="bi bi-people"></i> Meet the Members</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <p class="nav-group-label">CincyHacks</p>
+        <ul class="side-nav">
+          <li><a href="cincyhacks.html"><i class="bi bi-lightning-charge"></i> CincyHacks</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <p class="nav-group-label">Arcade</p>
+        <ul class="side-nav">
+          <li><a href="games.html"><i class="bi bi-controller"></i> Minigames</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-foot">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+          <i class="bi bi-moon-stars"></i><span>Dark mode</span>
+        </button>
+        <a href="#join" class="btn btn-hc w-100 mb-3">Join the Club</a>
+        Part of the <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a> network
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+
+    <!-- Hero -->
+    <header class="page-hero">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7">
+            <span class="eyebrow">// mason high school</span>
+            <h1 class="mb-3">Explore the world of <span class="accent">technology</span> every week.</h1>
+            <p class="lead mb-4">
+              Interested in computer science, IT, or anything in between? Mason Hack Club is open to
+              all students: workshops, hackathons, guest speakers, and more.
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#join" class="btn btn-hc">Join the club <i class="bi bi-arrow-right"></i></a>
+              <a href="cincyhacks.html" class="btn btn-hc-outline">About CincyHacks</a>
+            </div>
+          </div>
+          <div class="col-lg-5 text-center">
+            <img class="hero-logo" src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Highlights -->
+    <section class="highlight-strip">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="row g-0">
+          <div class="col-6 col-md-3 stat"><strong>#1</strong><span>Largest HS student-led hackathon in Ohio</span></div>
+          <div class="col-6 col-md-3 stat"><strong>Weekly</strong><span>Meetings &amp; workshops</span></div>
+          <div class="col-6 col-md-3 stat"><strong>2</strong><span>Sponsors: InfoTrust &amp; Encore</span></div>
+          <div class="col-6 col-md-3 stat"><strong>Free</strong><span>Open to all students</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who we are -->
+    <section class="section" id="who-we-are">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="section-head">
+          <span class="eyebrow">// who we are</span>
+          <h2>A club for students who build.</h2>
+          <p>
+            We're a student-run chapter of Hack Club, a global network of high school coding clubs.
+            Beginners and experienced coders alike meet every week to learn, build, and ship projects,
+            and we're the team behind CincyHacks.
+          </p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <article class="hc-card">
+              <div class="icon-tile"><i class="bi bi-tools"></i></div>
+              <h3>Workshops</h3>
+              <p>Hands-on sessions where you learn a skill and leave with something you built.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="hc-card">
+              <div class="icon-tile red"><i class="bi bi-lightning-charge"></i></div>
+              <h3>Hackathons</h3>
+              <p>Build a project from scratch in a weekend, including our own event, CincyHacks.</p>
+            </article>
+          </div>
+          <div class="col-md-4">
+            <article class="hc-card">
+              <div class="icon-tile alt"><i class="bi bi-mic"></i></div>
+              <h3>Guest Speakers</h3>
+              <p>People working in tech share what they do and how they got there.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Goals -->
+    <section class="section section-alt" id="goals">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="section-head">
+          <span class="eyebrow">// what we want to achieve</span>
+          <h2>Where we're headed</h2>
+          <p>Our goals for this year and beyond.</p>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="goal">
+              <i class="bi bi-people-fill"></i>
+              <div>
+                <h3>More CincyHacks attendees</h3>
+                <p>Bring more students from across the region to CincyHacks every year.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="goal">
+              <i class="bi bi-graph-up-arrow"></i>
+              <div>
+                <h3>More growth</h3>
+                <p>Grow club membership and help every member ship their first project.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="goal">
+              <i class="bi bi-broadcast"></i>
+              <div>
+                <h3>More reach</h3>
+                <p>Partner with more schools, sponsors, and the local tech community.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="goal">
+              <i class="bi bi-mortarboard"></i>
+              <div>
+                <h3>More learning opportunities</h3>
+                <p>Run more workshops and bring in more guest speakers from the industry.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accomplishments -->
+    <section class="section" id="accomplishments">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="section-head">
+          <span class="eyebrow">// past accomplishments</span>
+          <h2>What we've done so far</h2>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7">
+            <div class="feature h-100">
+              <span class="badge-hc mb-3"><i class="bi bi-trophy-fill"></i> CincyHacks</span>
+              <p class="big mb-3">The largest high school student-led hackathon in Ohio.</p>
+              <p class="mb-4">
+                CincyHacks is organized entirely by Mason Hack Club students, from planning and
+                sponsorships to running the event.
+              </p>
+              <a href="cincyhacks.html" class="btn btn-hc">Learn about CincyHacks <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="hc-card">
+              <h3 class="mb-3">Highlights</h3>
+              <ul class="mini-list">
+                <li><i class="bi bi-check-circle-fill"></i><span>Hosted Ohio's largest high school student-led hackathon</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Partnered with sponsors InfoTrust and Encore</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Weekly workshops open to every student</span></li>
+                <li><i class="bi bi-check-circle-fill"></i><span>Add another accomplishment here</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section class="section section-alt" id="sponsors">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="section-head">
+          <span class="eyebrow">// sponsors</span>
+          <h2>Thank you to our sponsors</h2>
+          <p>Their support makes our events and workshops possible.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <!-- Swap the wordmark for a logo: <img src="assets/img/sponsors/infotrust.png" alt="InfoTrust" height="48"> -->
+            <div class="sponsor">
+              <span class="wordmark">InfoTrust</span>
+              <small>Sponsor</small>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="sponsor">
+              <span class="wordmark">Encore</span>
+              <small>Sponsor</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Media -->
+    <section class="section" id="media">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="section-head">
+          <span class="eyebrow">// media</span>
+          <h2>Photos from the club</h2>
+          <p>Meetings, workshops, and CincyHacks.</p>
+        </div>
+        <!-- Replace each tile's icon with <img src="assets/img/media/photo-1.jpg" alt="..."> -->
+        <div class="row g-3">
+          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
+          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
+          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
+          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
+          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
+          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Join -->
+    <section class="cta" id="join">
+      <div class="container-xl px-4 px-lg-5">
+        <span class="eyebrow">// join us</span>
+        <h2 class="mb-3">Ready to <span class="accent">start hacking?</span></h2>
+        <p>Join our Schoology group to get meeting updates, workshop info, and CincyHacks news.</p>
+        <a href="#" class="btn btn-hc">Join the Schoology group <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container-xl px-4 px-lg-5 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+        <span class="built-by"><i class="bi bi-code-slash"></i> Built by Hack Club members</span>
+        <span>&copy; <span data-year></span> Mason Hack Club &middot; <a href="https://hackclub.com" target="_blank" rel="noopener">hackclub.com</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

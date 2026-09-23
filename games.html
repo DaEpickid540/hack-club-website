@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minigames | Mason Hack Club</title>
+  <meta name="description" content="Among Us-style minigames built by Mason Hack Club members." />
+  <meta name="theme-color" content="#041f3b" />
+  <link rel="icon" href="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <script>
+    // Set the theme before CSS paints so there's no flash of the wrong mode
+    (function () {
+      var t;
+      try { t = localStorage.getItem("theme"); } catch (e) {}
+      if (t !== "light" && t !== "dark") {
+        t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
+      document.documentElement.setAttribute("data-bs-theme", t);
+    })();
+  </script>
+  <link href="assets/css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Mobile top bar -->
+  <div class="topbar d-lg-none d-flex align-items-center justify-content-between px-3 py-2">
+    <a href="index.html" class="brand">
+      <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+      <strong>Mason Hack Club</strong>
+    </a>
+    <button class="btn p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar offcanvas-lg offcanvas-start" tabindex="-1" id="sidebar" aria-label="Site navigation">
+    <div class="offcanvas-header d-lg-none">
+      <span class="display-font fs-5">Menu</span>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebar" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <a href="index.html" class="brand d-none d-lg-flex">
+        <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+        <span><strong>Mason Hack Club</strong><small>Mason High School</small></span>
+      </a>
+
+      <nav>
+        <p class="nav-group-label">Hack Club</p>
+        <ul class="side-nav">
+          <li><a href="index.html"><i class="bi bi-house-door"></i> About the Club</a></li>
+          <li class="sub"><a href="index.html#who-we-are">Who we are</a></li>
+          <li class="sub"><a href="index.html#goals">What we want to achieve</a></li>
+          <li class="sub"><a href="index.html#accomplishments">Past accomplishments</a></li>
+          <li class="sub"><a href="index.html#sponsors">Sponsors</a></li>
+          <li class="sub"><a href="index.html#media">Media</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <p class="nav-group-label">Club Members</p>
+        <ul class="side-nav">
+          <li><a href="members.html"><i class="bi bi-people"></i> Meet the Members</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <p class="nav-group-label">CincyHacks</p>
+        <ul class="side-nav">
+          <li><a href="cincyhacks.html"><i class="bi bi-lightning-charge"></i> CincyHacks</a></li>
+        </ul>
+      </nav>
+
+      <nav>
+        <p class="nav-group-label">Arcade</p>
+        <ul class="side-nav">
+          <li><a href="games.html" class="active" aria-current="page"><i class="bi bi-controller"></i> Minigames</a></li>
+        </ul>
+      </nav>
+
+      <div class="sidebar-foot">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Switch color theme">
+          <i class="bi bi-moon-stars"></i><span>Dark mode</span>
+        </button>
+        <a href="index.html#join" class="btn btn-hc w-100 mb-3">Join the Club</a>
+        Part of the <a href="https://hackclub.com" target="_blank" rel="noopener">Hack Club</a> network
+      </div>
+    </div>
+  </aside>
+
+  <div class="main">
+
+    <header class="page-hero">
+      <div class="container-xl px-4 px-lg-5">
+        <span class="eyebrow">// arcade</span>
+        <h1 class="mb-3">Do your <span class="accent">tasks.</span></h1>
+        <p class="lead mb-0">Four Among Us-style minigames built by club members. Each one takes under a minute.</p>
+      </div>
+    </header>
+
+    <section class="section section-alt">
+      <div class="container-xl px-4 px-lg-5">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+
+          <div class="col">
+            <article class="hc-card game-card">
+              <div class="icon-tile"><i class="bi bi-grid-3x3"></i></div>
+              <h3>Systems Check</h3>
+              <p>A pattern lights up on the left panel. Mirror it on the right without hitting a wrong cell.</p>
+              <button type="button" class="btn btn-hc" data-game="reactor"><i class="bi bi-play-fill"></i> Play</button>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="hc-card game-card">
+              <div class="icon-tile red"><i class="bi bi-bullseye"></i></div>
+              <h3>Set Your Route</h3>
+              <p>Drag the marker onto the ring. Arrow keys work too.</p>
+              <button type="button" class="btn btn-hc" data-game="setroute"><i class="bi bi-play-fill"></i> Play</button>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="hc-card game-card">
+              <div class="icon-tile alt"><i class="bi bi-window-stack"></i></div>
+              <h3>The Morning Of</h3>
+              <p>Hackathon day, and the check-in laptop is buried in pop-ups. Close every window.</p>
+              <button type="button" class="btn btn-hc" data-game="popups"><i class="bi bi-play-fill"></i> Play</button>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="hc-card game-card">
+              <div class="icon-tile"><i class="bi bi-feather"></i></div>
+              <h3>While You Wait</h3>
+              <p>Fly through five gaps in a row. Tap, click, or press space to flap. One clip and it's back to zero.</p>
+              <button type="button" class="btn btn-hc" data-game="flappy"><i class="bi bi-play-fill"></i> Play</button>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="container-xl px-4 px-lg-5 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+        <span class="built-by"><i class="bi bi-code-slash"></i> Built by Hack Club members</span>
+        <span>&copy; <span data-year></span> Mason Hack Club &middot; <a href="https://hackclub.com" target="_blank" rel="noopener">hackclub.com</a></span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- The minigames render into this modal's body -->
+  <div class="modal fade game-modal" id="game-modal" tabindex="-1" aria-labelledby="game-modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h2 class="modal-title" id="game-modal-title" data-game-title></h2>
+            <p class="modal-hint" data-game-hint></p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" data-game-body></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/games.js"></script>
+</body>
+</html>

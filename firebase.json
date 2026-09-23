@@ -1,0 +1,18 @@
+{
+  "hosting": {
+    "site": "personal-suite-ca587",
+    "public": ".",
+    "ignore": [
+      "firebase.json",
+      ".firebaserc",
+      "**/.*",
+      ".git/**",
+      ".claude/**",
+      ".firebase/**",
+      "css/**",
+      "js/**",
+      "**/node_modules/**"
+    ],
+    "cleanUrls": true
+  }
+}

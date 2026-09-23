@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <!-- No background: the card's themed background shows through -->
+  <circle cx="200" cy="160" r="70" fill="#7f93ab" opacity="0.35"/>
+  <path d="M70 360c0-72 58-120 130-120s130 48 130 120" fill="#7f93ab" opacity="0.35"/>
+  <text x="200" y="385" text-anchor="middle" font-family="monospace" font-size="18" fill="#c44569">add your photo</text>
+</svg>
