@@ -1,0 +1,22 @@
+/* ---------- Placeholder / boilerplate ---------- */
+.placeholder-block {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  color: var(--muted);
+  background: var(--surface);
+  height: 100%;
+}
+.placeholder-block i {
+  font-size: 1.8rem;
+  color: var(--accent-text);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+.placeholder-block strong {
+  display: block;
+  color: var(--heading);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+}

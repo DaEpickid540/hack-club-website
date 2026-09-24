@@ -1,0 +1,149 @@
+/* ---------- Brand constants (same in both modes) ---------- */
+:root {
+  --hc-red: #c44569;
+  --hc-red-dark: #a3324f;
+  --hc-blue: #041f3b;
+
+  --sidebar-w: 264px;
+  --radius: 14px;
+
+  /* Chamfer sizes. Zero unless corner-shape is supported (see SHAPES), so
+     browsers without it get square corners instead of rounded ones. */
+  --cut-lg: 0px;
+  --cut-md: 0px;
+  --cut-sm: 0px;
+}
+
+/* ---------- Light mode (default) ---------- */
+:root,
+[data-bs-theme="light"] {
+  color-scheme: light;
+
+  --bg: #ffffff;
+  --bg-alt: #eef2f8;
+  --surface: #ffffff;
+  --border: #cfd8e4;
+  --heading: #041f3b;
+  --text: #1c2838;
+  --muted: #5d6b7c;
+  --accent-text: #b33a5c;          /* red that passes contrast on white */
+
+  --sidebar-bg: #eef2f8;
+  --sidebar-border: #cfd8e4;
+  --sidebar-text: #1c2838;
+  --sidebar-muted: #6b7a8c;
+  --sidebar-hover: rgba(4, 31, 59, 0.08);
+  --sub-active-bg: rgba(196, 69, 105, 0.12);
+  --sub-active-text: #b33a5c;
+
+  --hero-bg: #e3eaf4;
+  /* Root-relative so it resolves the same from any stylesheet or page */
+  --grid-image: url("/assets/img/grid-light.svg");
+  --hero-lead: #3d4b5e;
+  --trace-line: rgba(4, 31, 59, 0.2);
+  --trace-pulse: #c44569;
+  --trace-glow: rgba(196, 69, 105, 0.55);
+
+  --feature-bg: #f8e1e9;
+  --feature-border: #e8b6c7;
+  --feature-text: #4a3a42;
+  --badge-bg: #ffffff;
+  --badge-text: #b33a5c;
+  --badge-border: #e8b6c7;
+
+  --tile-1: #041f3b;
+  --tile-2: #c44569;
+  --tile-3: #3a6ea5;
+
+  --media-1: #d4dfed;
+  --media-2: #f1d3dd;
+  --media-icon: rgba(4, 31, 59, 0.45);
+
+  --cta-bg: #eef2f8;
+
+  --footer-bg: #e6ecf4;
+  --footer-text: #5d6b7c;
+  --footer-link: #041f3b;
+
+  --outline-btn-text: #041f3b;
+  --outline-btn-border: rgba(4, 31, 59, 0.4);
+  --outline-btn-hover: rgba(4, 31, 59, 0.06);
+
+  --chip-bg: #e6ecf4;
+  --chip-text: #041f3b;
+
+  --shadow: 0 16px 32px rgba(4, 31, 59, 0.14);
+  --rest-shadow: 0 1px 2px rgba(4, 31, 59, 0.06), 0 4px 12px rgba(4, 31, 59, 0.05);
+  --logo-shadow: 0 24px 48px rgba(4, 31, 59, 0.18);
+
+  --edge: #041f3b;
+  --hard-shadow: #041f3b;
+  --hard-shadow-hover: #c44569;
+  --bracket: #c44569;
+}
+
+/* ---------- Dark mode ---------- */
+[data-bs-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #04182e;
+  --bg-alt: #041f3b;
+  --surface: #0a2a4a;
+  --border: rgba(220, 230, 242, 0.1);
+  --heading: #f1f4f9;
+  --text: #d6dfea;
+  --muted: #93a3b8;
+  --accent-text: #e27b98;          /* lighter red that passes contrast on navy */
+
+  --sidebar-bg: #031426;
+  --sidebar-border: rgba(220, 230, 242, 0.06);
+  --sidebar-text: #d6dfea;
+  --sidebar-muted: #7d8ea4;
+  --sidebar-hover: rgba(220, 230, 242, 0.07);
+  --sub-active-bg: rgba(196, 69, 105, 0.2);
+  --sub-active-text: #f2a6bb;
+
+  --hero-bg: #041f3b;
+  --grid-image: url("/assets/img/grid-dark.svg");
+  --hero-lead: #b9c6d6;
+  --trace-line: rgba(220, 230, 242, 0.13);
+  --trace-pulse: #e27b98;
+  --trace-glow: rgba(226, 123, 152, 0.7);
+
+  --feature-bg: #0a2a4a;
+  --feature-border: rgba(196, 69, 105, 0.35);
+  --feature-text: #b9c6d6;
+  --badge-bg: rgba(196, 69, 105, 0.2);
+  --badge-text: #f2a6bb;
+  --badge-border: rgba(196, 69, 105, 0.5);
+
+  --tile-1: #1d4f86;
+  --tile-2: #c44569;
+  --tile-3: #2f6a9e;
+
+  --media-1: #0c3052;
+  --media-2: #43223c;
+  --media-icon: rgba(220, 230, 242, 0.35);
+
+  --cta-bg: #031426;
+
+  --footer-bg: #021020;
+  --footer-text: #93a3b8;
+  --footer-link: #f1f4f9;
+
+  --outline-btn-text: #f1f4f9;
+  --outline-btn-border: rgba(220, 230, 242, 0.35);
+  --outline-btn-hover: rgba(220, 230, 242, 0.08);
+
+  --chip-bg: rgba(220, 230, 242, 0.08);
+  --chip-text: #d6dfea;
+
+  --shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+  --rest-shadow: none;
+  --logo-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+
+  --edge: #3d5f86;
+  --hard-shadow: #1d4f86;
+  --hard-shadow-hover: #c44569;
+  --bracket: #e27b98;
+}

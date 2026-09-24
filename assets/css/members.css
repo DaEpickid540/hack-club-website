@@ -1,0 +1,67 @@
+/* ---------- Members ---------- */
+.member-card {
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  box-shadow: var(--rest-shadow);
+}
+.member-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--hc-red);
+  box-shadow: var(--shadow);
+}
+.member-photo {
+  aspect-ratio: 1;
+  width: 100%;
+  object-fit: cover;
+  background: var(--bg-alt);
+}
+.member-body {
+  padding: 1.25rem 1.4rem 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.member-body h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 0.15rem;
+}
+.member-role {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 0.75rem;
+}
+.member-bio {
+  color: var(--muted);
+  font-size: 0.93rem;
+  margin-bottom: 1rem;
+}
+.member-links {
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+.member-links a {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--chip-bg);
+  color: var(--chip-text);
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.member-links a:hover {
+  background: var(--hc-red);
+  color: #fff;
+}

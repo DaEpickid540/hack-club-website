@@ -1,0 +1,12 @@
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+  .hero-traces-layer {
+    animation: none;
+  }
+  /* The glitch bars stay as a still pattern */
+  .glitch-bar {
+    animation: none;
+  }
+}

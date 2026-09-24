@@ -1,0 +1,142 @@
+/* ---------- SHAPES ----------
+   Chamfered (bevelled) top-left and bottom-right corners, brutalist 2px
+   edges with hard offset shadows, and corner brackets on the other two
+   corners. Declared last so it wins over the softer defaults above. */
+@supports (corner-shape: bevel) {
+  :root {
+    --cut-lg: 18px;
+    --cut-md: 12px;
+    --cut-sm: 7px;
+  }
+}
+
+.hc-card, .goal, .sponsor, .member-card, .placeholder-block, .feature,
+.media-tile, .game-modal .modal-content, .hero-logo, .btn-hc, .btn-hc-outline,
+.icon-tile, .member-links a, .badge-hc, .side-nav a, .theme-toggle, .brand img,
+.reactor-grid, .route-screen, .popup-screen, .popup-window, .flappy-screen,
+.popup-close {
+  corner-shape: bevel;
+}
+
+/* Cards and panels */
+.hc-card, .goal, .sponsor, .member-card, .placeholder-block, .feature, .media-tile {
+  position: relative;
+  border: 2px solid var(--edge);
+  border-radius: var(--cut-lg) 0;
+  box-shadow: 5px 5px 0 var(--hard-shadow);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.placeholder-block {
+  border-style: dashed;
+}
+.goal {
+  border-left: 5px solid var(--hc-red);
+}
+.media-tile {
+  box-shadow: 4px 4px 0 var(--hard-shadow);
+}
+
+/* Every brutalist box lifts on hover and its shadow turns red */
+.hc-card, .goal, .sponsor, .member-card, .placeholder-block, .feature,
+.media-tile, .stat-lead, .stat-aside, .join-qr {
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.hc-card:hover, .goal:hover, .sponsor:hover, .member-card:hover,
+.placeholder-block:hover, .feature:hover, .media-tile:hover,
+.stat-aside:hover, .join-qr:hover {
+  transform: translate(-3px, -3px);
+  border-color: var(--edge);
+  box-shadow: 8px 8px 0 var(--hard-shadow-hover);
+}
+.goal:hover {
+  border-left-color: var(--hc-red);
+}
+/* The red callout can't get a red shadow, so it lifts onto a navy one */
+.stat-lead:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--hard-shadow);
+}
+
+/* Corner brackets: two bordered squares, top-right on ::before and
+   bottom-left on ::after, each showing only its two outer edges */
+.hc-card::before, .goal::before, .sponsor::before, .member-card::before,
+.placeholder-block::before, .feature::before, .media-tile::before,
+.hc-card::after, .goal::after, .sponsor::after, .member-card::after,
+.placeholder-block::after, .feature::after, .media-tile::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 12px;
+  height: 12px;
+  pointer-events: none;
+}
+.hc-card::before, .goal::before, .sponsor::before, .member-card::before,
+.placeholder-block::before, .feature::before, .media-tile::before {
+  top: 7px;
+  right: 7px;
+  border-top: 2px solid var(--bracket);
+  border-right: 2px solid var(--bracket);
+}
+.hc-card::after, .goal::after, .sponsor::after, .member-card::after,
+.placeholder-block::after, .feature::after, .media-tile::after {
+  bottom: 7px;
+  left: 7px;
+  border-bottom: 2px solid var(--bracket);
+  border-left: 2px solid var(--bracket);
+}
+
+/* Buttons: press down on click */
+.btn-hc, .btn-hc-outline {
+  --bs-btn-border-width: 2px;
+  --bs-btn-border-color: var(--edge);
+  --bs-btn-hover-border-color: var(--edge);
+  --bs-btn-active-border-color: var(--edge);
+  border-radius: var(--cut-sm) 0;
+  box-shadow: 3px 3px 0 var(--edge);
+  transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s;
+}
+.btn-hc:hover, .btn-hc-outline:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--edge);
+}
+.btn-hc:active, .btn-hc-outline:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--edge);
+}
+
+/* Small pieces */
+.icon-tile, .member-links a, .badge-hc {
+  border-radius: var(--cut-sm) 0;
+}
+.side-nav a, .theme-toggle {
+  border-radius: var(--cut-sm) 0;
+}
+.brand img {
+  border-radius: var(--cut-sm) 0;
+}
+.hero-logo {
+  border-radius: calc(var(--cut-lg) * 1.6) 0;
+  box-shadow: 10px 10px 0 var(--hard-shadow);
+}
+
+/* Game modal and minigame panels */
+.game-modal .modal-content {
+  border: 2px solid var(--edge);
+  border-radius: var(--cut-lg) 0;
+  box-shadow: 8px 8px 0 var(--hard-shadow);
+}
+.reactor-grid, .route-screen, .popup-screen, .flappy-screen {
+  border: 2px solid var(--edge);
+  border-radius: var(--cut-md) 0;
+}
+.reactor-cell {
+  border-radius: 0;
+}
+.popup-window {
+  border: 2px solid var(--edge);
+  border-radius: var(--cut-sm) 0;
+  box-shadow: 3px 3px 0 var(--edge);
+}
+.popup-close {
+  border-radius: 3px 0;
+}

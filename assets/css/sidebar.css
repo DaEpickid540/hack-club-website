@@ -1,0 +1,192 @@
+/* ---------- Sidebar ---------- */
+.sidebar {
+  /* !important beats Bootstrap's transparent .offcanvas-lg background on desktop */
+  background-color: var(--sidebar-bg) !important;
+  color: var(--sidebar-text);
+  width: var(--sidebar-w);
+  --bs-offcanvas-width: var(--sidebar-w);
+}
+@media (min-width: 992px) {
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    border-right: 1px solid var(--sidebar-border);
+  }
+  .main {
+    margin-left: var(--sidebar-w);
+  }
+}
+.sidebar .offcanvas-header,
+.sidebar .offcanvas-body {
+  padding: 1.5rem 1.25rem;
+}
+.sidebar .offcanvas-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--heading);
+}
+.brand:hover {
+  color: var(--heading);
+}
+.brand img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.brand strong {
+  display: block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.1;
+}
+.brand small {
+  color: var(--sidebar-muted);
+  font-size: 0.78rem;
+}
+
+.nav-group-label {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sidebar-muted);
+  margin: 0 0 0.5rem 0.75rem;
+}
+.side-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 2px;
+}
+.side-nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: 10px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.15s, color 0.15s;
+}
+.side-nav a:hover {
+  background: var(--sidebar-hover);
+  color: var(--heading);
+}
+.side-nav a.active {
+  background: var(--hc-red);
+  color: #fff;
+}
+.side-nav .sub a {
+  padding-left: 2.6rem;
+  font-size: 0.87rem;
+  color: var(--sidebar-muted);
+}
+.side-nav .sub a:hover {
+  color: var(--heading);
+}
+.side-nav .sub a.active {
+  background: var(--sub-active-bg);
+  color: var(--sub-active-text);
+}
+
+.sidebar-foot {
+  margin-top: auto;
+  font-size: 0.82rem;
+  color: var(--sidebar-muted);
+}
+.sidebar-foot a:not(.btn) {
+  color: var(--heading);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid var(--sidebar-border);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--sidebar-text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+.theme-toggle:hover {
+  background: var(--sidebar-hover);
+}
+
+/* Mobile top bar */
+.topbar {
+  background: var(--sidebar-bg);
+  border-bottom: 1px solid var(--sidebar-border);
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+.topbar .btn {
+  color: var(--heading);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* Sidebar links: bordered like the buttons, with room between them */
+.side-nav {
+  gap: 7px;
+}
+.side-nav .sub + .sub {
+  margin-top: -2px;
+}
+.side-nav a, .theme-toggle {
+  border: 2px solid var(--edge);
+  transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s, color 0.12s;
+}
+.side-nav .sub a {
+  border-width: 1px;
+  border-color: color-mix(in srgb, var(--edge) 55%, transparent);
+  margin-left: 0.6rem;
+  padding: 0.35rem 0.6rem 0.35rem 1rem;
+  font-size: 0.84rem;
+  white-space: nowrap;
+}
+/* Tighter gaps between groups pay for the extra space between links */
+.sidebar .offcanvas-body {
+  gap: 1.1rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  scrollbar-width: thin;
+}
+.side-nav a:hover, .theme-toggle:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--edge);
+}
+.side-nav .sub a:hover {
+  border-color: var(--edge);
+}
+.side-nav a.active {
+  border-color: var(--edge);
+  box-shadow: 3px 3px 0 var(--edge);
+}
+.nav-group-label {
+  margin-bottom: 0.65rem;
+}
+@media (min-width: 992px) {
+  /* The spacing makes the nav taller, so let it scroll on short screens */
+  .sidebar .offcanvas-body {
+    height: 100%;
+    overflow-y: auto;
+  }
+}

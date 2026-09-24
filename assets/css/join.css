@@ -1,0 +1,53 @@
+/* CTA */
+.cta {
+  background: var(--cta-bg);
+  text-align: center;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+.cta > .container-xl {
+  position: relative;
+}
+.cta h2 {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+}
+.cta p {
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto 2rem;
+}
+.join-qr {
+  display: block;
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background: #fff;
+  border: 2px solid var(--edge);
+  border-radius: var(--cut-md) 0;
+  corner-shape: bevel;
+  box-shadow: 5px 5px 0 var(--hard-shadow);
+}
+.cta .join-qr-hint {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+}
+
+/* Desktop: message on the left, QR code on the right */
+@media (min-width: 992px) {
+  .join-copy {
+    text-align: left;
+  }
+  .join-copy p {
+    margin-left: 0;
+  }
+  .join-code .join-qr {
+    margin-right: 0;
+  }
+  .join-code .join-qr-hint {
+    text-align: right;
+  }
+}

@@ -6,7 +6,7 @@
   <title>CincyHacks | Mason Hack Club</title>
   <meta name="description" content="CincyHacks: the largest high school student-led hackathon in Ohio, organized by Mason Hack Club." />
   <meta name="theme-color" content="#041f3b" />
-  <link rel="icon" href="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" />
+  <link rel="icon" data-media="logo" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -16,7 +16,11 @@
     // Set the theme before CSS paints so there's no flash of the wrong mode
     (function () {
       var t;
-      try { t = localStorage.getItem("theme"); } catch (e) {}
+      try {
+        t = localStorage.getItem("theme");
+      } catch (e) {
+        // Storage can be blocked; fall back to the system setting below.
+      }
       if (t !== "light" && t !== "dark") {
         t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }
@@ -30,7 +34,7 @@
   <!-- Mobile top bar -->
   <div class="topbar d-lg-none d-flex align-items-center justify-content-between px-3 py-2">
     <a href="index.html" class="brand">
-      <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+      <img data-media="logo" alt="Mason Hack Club logo" />
       <strong>Mason Hack Club</strong>
     </a>
     <button class="btn p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu">
@@ -46,7 +50,7 @@
     </div>
     <div class="offcanvas-body">
       <a href="index.html" class="brand d-none d-lg-flex">
-        <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+        <img data-media="logo" alt="Mason Hack Club logo" />
         <span><strong>Mason Hack Club</strong><small>Mason High School</small></span>
       </a>
 
@@ -98,7 +102,7 @@
     <!-- CincyHacks page: boilerplate only, fill in each block when content is ready -->
     <header class="page-hero">
       <div class="container-xl px-4 px-lg-5">
-        <span class="eyebrow">// cincyhacks</span>
+        <span class="eyebrow">cincyhacks</span>
         <h1 class="mb-3">Cincy<span class="accent">Hacks</span></h1>
         <p class="lead mb-4">Event tagline goes here.</p>
         <div class="d-flex flex-wrap gap-2">
@@ -111,7 +115,7 @@
     <section class="section">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// about</span>
+          <span class="eyebrow">about</span>
           <h2>About the event</h2>
           <p>Description coming soon.</p>
         </div>
@@ -132,7 +136,7 @@
     <section class="section section-alt">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// schedule</span>
+          <span class="eyebrow">schedule</span>
           <h2>Schedule</h2>
         </div>
         <div class="placeholder-block"><i class="bi bi-clock"></i><strong>Schedule coming soon</strong></div>
@@ -142,7 +146,7 @@
     <section class="section">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// sponsors</span>
+          <span class="eyebrow">sponsors</span>
           <h2>Sponsors</h2>
         </div>
         <div class="placeholder-block"><i class="bi bi-award"></i><strong>Sponsor logos coming soon</strong></div>
@@ -152,7 +156,7 @@
     <section class="section section-alt">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// faq</span>
+          <span class="eyebrow">faq</span>
           <h2>FAQ</h2>
         </div>
         <div class="placeholder-block"><i class="bi bi-question-circle"></i><strong>FAQ coming soon</strong></div>
@@ -169,5 +173,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/media.js"></script>
+  <script src="assets/js/traces.js"></script>
+  <script src="assets/js/glitch.js"></script>
 </body>
 </html>

@@ -1,0 +1,96 @@
+/* ---------- Glitch effect ----------
+   Pink and red bars built by glitch.js. Clusters sit in the other pages'
+   hero corner (the home page hero has none), the hackathon card's padding,
+   and on top of "start hacking?". All of them ignore the mouse. */
+.glitch {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Keep the real content above the glitch in the hero and hackathon card */
+.page-hero > .container-xl,
+.feature > :not(.glitch) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Other pages' heroes: the top-right band, above the headline */
+.glitch-hero {
+  top: 10px;
+  right: 0;
+  width: min(360px, 48%);
+  height: 60px;
+}
+
+/* Hackathon card: its bottom-right padding, beside the button */
+.feature > .glitch-feature {
+  position: absolute;
+  z-index: 0;
+  right: 14px;
+  bottom: 8px;
+  width: 42%;
+  height: 28px;
+}
+
+/* Join section: on top of the words "start hacking?". The phrase stays on
+   one line so the glitch covers it as a single block. */
+#join h2 .accent {
+  position: relative;
+  display: inline-block;
+}
+.glitch-join {
+  inset: -4px -6px;
+  z-index: 1;
+}
+
+.glitch-bar {
+  position: absolute;
+  display: block;
+  opacity: var(--glitch-rest);
+  animation: glitch-burst var(--glitch-duration) steps(1, end) infinite;
+  animation-delay: var(--glitch-delay);
+}
+
+/* Pink palette: every tone is pink or red */
+.glitch-bar.pink-0 {
+  background: #c44569;
+}
+.glitch-bar.pink-1 {
+  background: #e27b98;
+}
+.glitch-bar.pink-2 {
+  background: #f2a6bb;
+}
+.glitch-bar.pink-3 {
+  background: #a3324f;
+}
+
+/* Still for most of the loop, then a quick burst of jumps and flickers.
+   steps(1, end) makes every change a hard jump, like a bad signal. */
+@keyframes glitch-burst {
+  0%,
+  84%,
+  100% {
+    transform: translateX(0);
+    opacity: var(--glitch-rest);
+  }
+  86% {
+    transform: translateX(var(--glitch-shift));
+    opacity: 1;
+  }
+  89% {
+    transform: translateX(calc(var(--glitch-shift) * -0.6)) scaleX(1.3);
+    opacity: 0.2;
+  }
+  92% {
+    transform: translateX(calc(var(--glitch-shift) * 0.4));
+    opacity: 0.9;
+  }
+  95% {
+    transform: translateX(0) scaleX(0.7);
+    opacity: 0;
+  }
+}

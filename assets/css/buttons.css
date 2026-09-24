@@ -1,0 +1,27 @@
+/* ---------- Buttons ---------- */
+.btn-hc {
+  --bs-btn-bg: var(--hc-red);
+  --bs-btn-border-color: var(--hc-red);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--hc-red-dark);
+  --bs-btn-hover-border-color: var(--hc-red-dark);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-bg: var(--hc-red-dark);
+  --bs-btn-active-border-color: var(--hc-red-dark);
+  --bs-btn-active-color: #fff;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+}
+.btn-hc-outline {
+  --bs-btn-color: var(--outline-btn-text);
+  --bs-btn-border-color: var(--outline-btn-border);
+  --bs-btn-hover-bg: var(--outline-btn-hover);
+  --bs-btn-hover-border-color: var(--outline-btn-text);
+  --bs-btn-hover-color: var(--outline-btn-text);
+  --bs-btn-active-bg: var(--outline-btn-hover);
+  --bs-btn-active-color: var(--outline-btn-text);
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.65rem 1.4rem;
+}

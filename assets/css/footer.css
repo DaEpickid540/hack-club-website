@@ -1,0 +1,22 @@
+/* ---------- Footer ---------- */
+.site-footer {
+  background: var(--footer-bg);
+  border-top: 1px solid var(--border);
+  color: var(--footer-text);
+  padding: 2.25rem 0;
+  font-size: 0.9rem;
+}
+.site-footer a {
+  color: var(--footer-link);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  color: var(--accent-text);
+}
+.built-by {
+  color: var(--heading);
+  font-weight: 500;
+}
+.built-by i {
+  color: var(--accent-text);
+}
