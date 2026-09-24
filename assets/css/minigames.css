@@ -1,0 +1,205 @@
+/* ---------- MINIGAMES (ported from ia-life) ---------- */
+.game-card .icon-tile {
+  margin-bottom: 1rem;
+}
+.game-card .btn {
+  margin-top: 1.25rem;
+}
+
+.game-modal .modal-content {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+}
+.game-modal .modal-header,
+.game-modal .modal-body {
+  padding: 1.25rem 1.5rem;
+}
+.game-modal .modal-header {
+  border-bottom: 0;
+  padding-bottom: 0;
+  align-items: flex-start;
+}
+.game-modal .modal-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+.modal-hint {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0.25rem 0 0;
+}
+
+.minigame-status {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--accent-text);
+  margin: 0.75rem 0 0;
+  min-height: 1.4em;
+  text-align: center;
+}
+
+/* Reactor: the pattern on the left, the player's attempt on the right. */
+.reactor-board {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  max-width: 340px;
+  margin: 0 auto;
+}
+.reactor-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  padding: 0.6rem;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  flex: 1;
+}
+.reactor-cell {
+  aspect-ratio: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0;
+}
+button.reactor-cell {
+  cursor: pointer;
+}
+button.reactor-cell:hover {
+  border-color: var(--hc-red);
+}
+.reactor-cell.is-lit {
+  background: var(--hc-red);
+  border-color: var(--hc-red);
+}
+button.reactor-cell:focus-visible {
+  outline: 2px solid var(--hc-red);
+  outline-offset: 1px;
+}
+
+/* Set route: drag the marker onto the ring. */
+.route-screen {
+  position: relative;
+  height: min(220px, 40vh);
+  background-color: var(--bg-alt);
+  background-image: var(--grid-image);
+  background-size: 24px 24px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  touch-action: none;
+}
+.route-target {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  margin: -21px 0 0 -21px;
+  border: 3px solid var(--heading);
+  border-radius: 50%;
+  opacity: 0.6;
+}
+.route-target.is-near {
+  border-color: var(--hc-red);
+  opacity: 1;
+}
+.route-marker {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  background: var(--hc-red);
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  cursor: grab;
+  touch-action: none;
+}
+.route-marker:active {
+  cursor: grabbing;
+}
+.route-marker:focus-visible {
+  outline: 2px solid var(--heading);
+  outline-offset: 2px;
+}
+
+/* Popups: a screen of windows that are not the thing the player wanted. */
+.popup-screen {
+  position: relative;
+  height: min(250px, 44vh);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.popup-window {
+  position: absolute;
+  width: 54%;
+  min-width: 150px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+.popup-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  background: var(--tile-1);
+  padding: 0.2rem 0.25rem 0.2rem 0.6rem;
+}
+.popup-title {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.popup-close {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 1;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+}
+.popup-close:hover {
+  background: var(--hc-red);
+}
+.popup-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 1px;
+}
+.popup-text {
+  font-size: 0.78rem;
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  color: var(--text);
+}
+
+/* Flappy: fly the gaps, and a clip puts the score back to nothing. */
+.flappy-screen {
+  display: block;
+  width: 100%;
+  height: min(240px, 42vh);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  touch-action: none;
+  cursor: pointer;
+}
+.flappy-screen:focus-visible {
+  outline: 2px solid var(--hc-red);
+  outline-offset: 2px;
+}

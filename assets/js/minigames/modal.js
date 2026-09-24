@@ -1,5 +1,5 @@
-// Stands in for ia-life's modal.js: the minigames call openModal(title, hint)
-// and render into the body it returns. Here that body lives in a Bootstrap modal.
+// Stands in for ia-life's modal.js: each game calls openModal(title, hint)
+// and renders into the body it returns. Here that body lives in a Bootstrap modal.
 
 const dialog = document.getElementById('game-modal');
 const titleEl = dialog.querySelector('[data-game-title]');
@@ -33,7 +33,9 @@ export function showModal() {
       return;
     }
 
-    dialog.addEventListener('shown.bs.modal', function () { resolve(); }, { once: true });
+    dialog.addEventListener('shown.bs.modal', function () {
+      resolve();
+    }, { once: true });
     modal.show();
   });
 }

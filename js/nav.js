@@ -1,4 +1,4 @@
-// Shared navbar. Each page includes <nav id="site-nav"></nav> and this script.
+// literaly just creats the navbar on demand
 const NAV_SECTIONS = [
   {
     label: "Hack Club",

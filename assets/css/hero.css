@@ -1,0 +1,167 @@
+/* ---------- Page header ---------- */
+.page-hero {
+  position: relative;
+  background: var(--hero-bg);
+  overflow: hidden;
+  padding: 5rem 0 5.5rem;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--grid-image);
+  background-size: 42px 42px;
+}
+/* Animated circuit traces (built by traces.js). The layer holds its own copy of
+   the grid so grid and traces drift together; the static ::before grid above
+   is only the fallback for when the script hasn't run. */
+.page-hero.has-traces::before {
+  display: none;
+}
+.hero-traces {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-traces-layer {
+  position: absolute;
+  top: -42px;
+  left: -42px;
+  right: 0;
+  bottom: 0;
+  background-image: var(--grid-image);
+  background-size: 42px 42px;
+  animation: trace-drift 30s linear infinite;
+}
+.hero-traces svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+}
+.trace-line {
+  fill: none;
+  stroke: var(--trace-line);
+  stroke-width: 1.5;
+}
+.trace-node {
+  fill: none;
+  stroke: var(--trace-pulse);
+  stroke-width: 1.5;
+  opacity: 0.55;
+}
+.trace-pulse {
+  fill: none;
+  stroke: var(--trace-pulse);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 4px var(--trace-glow));
+}
+/* One cell per loop, so the end frame lines up exactly with the start. */
+@keyframes trace-drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(42px, 42px);
+  }
+}
+.page-hero > .container-xl {
+  position: relative;
+  z-index: 1;
+}
+.page-hero h1 {
+  font-size: clamp(2.4rem, 5.5vw, 4rem);
+  font-weight: 700;
+}
+.page-hero .lead {
+  color: var(--hero-lead);
+  max-width: 580px;
+}
+.accent {
+  color: var(--accent-text);
+}
+.hero-label {
+  margin-bottom: 0.9rem;
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-caps: all-small-caps;
+  letter-spacing: 0.06em;
+  color: var(--hero-lead);
+}
+/* Home headline: on desktop it scales with its column (container query units)
+   so each sentence stays on one line. Its longest line is about 12.3em wide. */
+@media (min-width: 992px) {
+  .hero-copy {
+    container-type: inline-size;
+  }
+  .page-hero .hero-headline {
+    font-size: min(4rem, 7.9cqi);
+  }
+}
+
+.eyebrow {
+  display: inline-block;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-text);
+  margin-bottom: 0.75rem;
+}
+
+.hero-logo {
+  width: min(100%, 300px);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 28px;
+  box-shadow: var(--logo-shadow);
+  transform: rotate(3deg);
+}
+@media (max-width: 991.98px) {
+  .hero-logo {
+    width: min(55%, 220px);
+  }
+}
+
+/* Small sideways QR stuck on the top-right corner of the hero logo card */
+/* The wrapper takes the logo's old sizing: a percentage width on an image
+   inside a shrink-to-fit box would collapse to the image's small native size. */
+.hero-logo-wrap {
+  position: relative;
+  display: inline-block;
+  width: min(100%, 300px);
+}
+.hero-logo-wrap .hero-logo {
+  width: 100%;
+}
+@media (max-width: 991.98px) {
+  .hero-logo-wrap {
+    width: min(55%, 220px);
+  }
+}
+/* Sized as a share of the logo card, so it stays small at every width */
+.hero-qr {
+  position: absolute;
+  top: -9%;
+  right: -11%;
+  z-index: 2;
+  display: block;
+  width: 28%;
+  padding: 0;
+  background: #fff;
+  border: 2px solid var(--edge);
+  box-shadow: 3px 3px 0 var(--hard-shadow);
+  transform: rotate(78deg);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.hero-qr img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.hero-qr:hover {
+  transform: rotate(78deg) scale(1.08);
+  box-shadow: 4px 4px 0 var(--hard-shadow-hover);
+}

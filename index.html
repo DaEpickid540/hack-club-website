@@ -6,7 +6,7 @@
   <title>Mason Hack Club</title>
   <meta name="description" content="Mason Hack Club: a student-led club exploring technology every week through workshops, hackathons, and guest speakers." />
   <meta name="theme-color" content="#041f3b" />
-  <link rel="icon" href="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" />
+  <link rel="icon" data-media="logo" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
@@ -16,7 +16,11 @@
     // Set the theme before CSS paints so there's no flash of the wrong mode
     (function () {
       var t;
-      try { t = localStorage.getItem("theme"); } catch (e) {}
+      try {
+        t = localStorage.getItem("theme");
+      } catch (e) {
+        // Storage can be blocked; fall back to the system setting below.
+      }
       if (t !== "light" && t !== "dark") {
         t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
       }
@@ -30,7 +34,7 @@
   <!-- Mobile top bar -->
   <div class="topbar d-lg-none d-flex align-items-center justify-content-between px-3 py-2">
     <a href="index.html" class="brand">
-      <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+      <img data-media="logo" alt="Mason Hack Club logo" />
       <strong>Mason Hack Club</strong>
     </a>
     <button class="btn p-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar" aria-label="Open menu">
@@ -46,7 +50,7 @@
     </div>
     <div class="offcanvas-body">
       <a href="index.html" class="brand d-none d-lg-flex">
-        <img src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+        <img data-media="logo" alt="Mason Hack Club logo" />
         <span><strong>Mason Hack Club</strong><small>Mason High School</small></span>
       </a>
 
@@ -99,33 +103,48 @@
     <header class="page-hero">
       <div class="container-xl px-4 px-lg-5">
         <div class="row align-items-center g-5">
-          <div class="col-lg-7">
-            <span class="eyebrow">// mason high school</span>
-            <h1 class="mb-3">Explore the world of <span class="accent">technology</span> every week.</h1>
+          <div class="col-lg-8 hero-copy">
+            <p class="hero-label">Mason High School</p>
+            <h1 class="hero-headline mb-3">Come for the workshops.<br />Stay and run a hackathon.</h1>
             <p class="lead mb-4">
               Interested in computer science, IT, or anything in between? Mason Hack Club is open to
               all students: workshops, hackathons, guest speakers, and more.
             </p>
             <div class="d-flex flex-wrap gap-2">
-              <a href="#join" class="btn btn-hc">Join the club <i class="bi bi-arrow-right"></i></a>
+              <a href="#join" class="btn btn-hc">Join the club</a>
               <a href="cincyhacks.html" class="btn btn-hc-outline">About CincyHacks</a>
             </div>
           </div>
-          <div class="col-lg-5 text-center">
-            <img class="hero-logo" src="https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858" alt="Mason Hack Club logo" />
+          <div class="col-lg-4 text-center">
+            <div class="hero-logo-wrap">
+              <img class="hero-logo" data-media="logo" alt="Mason Hack Club logo" />
+              <!-- A second, small copy of the join QR, stuck sideways on the logo card -->
+              <a class="hero-qr" href="https://masonohioschools.schoology.com/group/648541173" target="_blank" rel="noopener" aria-label="Join the Schoology group">
+                <img data-media="schoologyQr" alt="" width="84" height="84" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- Highlights -->
-    <section class="highlight-strip">
+    <!-- Stat callouts -->
+    <section class="stat-callouts">
       <div class="container-xl px-4 px-lg-5">
-        <div class="row g-0">
-          <div class="col-6 col-md-3 stat"><strong>#1</strong><span>Largest HS student-led hackathon in Ohio</span></div>
-          <div class="col-6 col-md-3 stat"><strong>Weekly</strong><span>Meetings &amp; workshops</span></div>
-          <div class="col-6 col-md-3 stat"><strong>2</strong><span>Sponsors: InfoTrust &amp; Encore</span></div>
-          <div class="col-6 col-md-3 stat"><strong>Free</strong><span>Open to all students</span></div>
+        <div class="row g-4">
+          <div class="col-lg-8">
+            <div class="stat-lead">
+              <strong>#1</strong>
+              <p>Ohio's largest high school student-led hackathon.
+                <small>That's CincyHacks, and club members run every part of it.</small></p>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="stat-aside">
+              <strong>Free</strong>
+              <p>Open to all students. No experience needed.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -134,12 +153,13 @@
     <section class="section" id="who-we-are">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// who we are</span>
+          <span class="eyebrow">who we are</span>
           <h2>A club for students who build.</h2>
           <p>
             We're a student-run chapter of Hack Club, a global network of high school coding clubs.
-            Beginners and experienced coders alike meet every week to learn, build, and ship projects,
-            and we're the team behind CincyHacks.
+            We meet every week, and beginners sit next to experienced coders to learn, build, and
+            ship projects. We're also the team behind CincyHacks, backed by our sponsors InfoTrust
+            and Encore.
           </p>
         </div>
         <div class="row g-4">
@@ -172,7 +192,7 @@
     <section class="section section-alt" id="goals">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// what we want to achieve</span>
+          <span class="eyebrow">what we want to achieve</span>
           <h2>Where we're headed</h2>
           <p>Our goals for this year and beyond.</p>
         </div>
@@ -221,7 +241,7 @@
     <section class="section" id="accomplishments">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// past accomplishments</span>
+          <span class="eyebrow">past accomplishments</span>
           <h2>What we've done so far</h2>
         </div>
         <div class="row g-4 align-items-stretch">
@@ -255,23 +275,23 @@
     <section class="section section-alt" id="sponsors">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// sponsors</span>
+          <span class="eyebrow">sponsors</span>
           <h2>Thank you to our sponsors</h2>
           <p>Their support makes our events and workshops possible.</p>
         </div>
         <div class="row g-4">
+          <!-- Logo images come from assets/data/media.json -->
           <div class="col-md-6">
-            <!-- Swap the wordmark for a logo: <img src="assets/img/sponsors/infotrust.png" alt="InfoTrust" height="48"> -->
-            <div class="sponsor">
-              <span class="wordmark">InfoTrust</span>
+            <a class="sponsor" href="https://infotrust.com" target="_blank" rel="noopener">
+              <img class="sponsor-logo" data-media="sponsorInfotrust" width="300" height="55" />
               <small>Sponsor</small>
-            </div>
+            </a>
           </div>
           <div class="col-md-6">
-            <div class="sponsor">
-              <span class="wordmark">Encore</span>
+            <a class="sponsor" href="https://encore.tech" target="_blank" rel="noopener">
+              <img class="sponsor-logo" data-media="sponsorEncore" width="1001" height="297" />
               <small>Sponsor</small>
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -281,18 +301,14 @@
     <section class="section" id="media">
       <div class="container-xl px-4 px-lg-5">
         <div class="section-head">
-          <span class="eyebrow">// media</span>
+          <span class="eyebrow">media</span>
           <h2>Photos from the club</h2>
           <p>Meetings, workshops, and CincyHacks.</p>
         </div>
-        <!-- Replace each tile's icon with <img src="assets/img/media/photo-1.jpg" alt="..."> -->
-        <div class="row g-3">
-          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
-          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
-          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
-          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
-          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
-          <div class="col-6 col-md-4"><div class="media-tile"><i class="bi bi-image"></i></div></div>
+        <!-- Filled from the "gallery" list in assets/data/media.json -->
+        <div class="row g-3" data-gallery data-gallery-preview="6"></div>
+        <div class="text-center mt-4">
+          <button type="button" class="btn btn-hc-outline" data-gallery-more hidden>Show all photos</button>
         </div>
       </div>
     </section>
@@ -300,10 +316,20 @@
     <!-- Join -->
     <section class="cta" id="join">
       <div class="container-xl px-4 px-lg-5">
-        <span class="eyebrow">// join us</span>
-        <h2 class="mb-3">Ready to <span class="accent">start hacking?</span></h2>
-        <p>Join our Schoology group to get meeting updates, workshop info, and CincyHacks news.</p>
-        <a href="#" class="btn btn-hc">Join the Schoology group <i class="bi bi-arrow-right"></i></a>
+        <div class="row align-items-center g-5">
+          <!-- Message on the left -->
+          <div class="col-lg-7 join-copy">
+            <span class="eyebrow">join us</span>
+            <h2 class="mb-3">Ready to <span class="accent">start hacking?</span></h2>
+            <p>Join our Schoology group to get meeting updates, workshop info, and CincyHacks news.</p>
+            <a href="https://masonohioschools.schoology.com/group/648541173" class="btn btn-hc" target="_blank" rel="noopener">Join the Schoology group</a>
+          </div>
+          <!-- QR code on the right -->
+          <div class="col-lg-5 join-code">
+            <img class="join-qr" data-media="schoologyQr" width="360" height="360" />
+            <p class="join-qr-hint">Scan with your phone, or use the button.</p>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -317,5 +343,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/media.js"></script>
+  <script src="assets/js/traces.js"></script>
+  <script src="assets/js/glitch.js"></script>
 </body>
 </html>

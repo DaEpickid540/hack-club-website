@@ -1,0 +1,29 @@
+/* ---------- Base ---------- */
+:root {
+  --bs-primary: var(--hc-red);
+  --bs-primary-rgb: 196, 69, 105;
+  --bs-body-font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+a {
+  color: var(--accent-text);
+}
+a:hover {
+  color: var(--hc-red);
+}
+
+h1, h2, h3, h4, .display-font {
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
+.mono {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}

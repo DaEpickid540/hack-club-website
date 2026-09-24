@@ -1,0 +1,144 @@
+{
+  "logo": {
+    "src": "https://asset-cdn.schoology.com/system/files/imagecache/profile_reg/grouplogos/logo-648541173_696d6c69d69a2.png?1768778858",
+    "alt": "Mason Hack Club logo"
+  },
+  "schoologyQr": {
+    "src": "assets/img/schoology-qr.png",
+    "alt": "QR code that opens the Mason Hack Club Schoology group"
+  },
+  "memberPlaceholder": {
+    "src": "assets/img/members/placeholder.svg",
+    "alt": ""
+  },
+  "sponsorInfotrust": {
+    "src": "https://infotrust.com/wp-content/uploads/2019/05/infotrust-logo.svg",
+    "alt": "InfoTrust"
+  },
+  "sponsorEncore": {
+    "src": "https://encore.tech/wp-content/uploads/2019/01/encore-logo.png",
+    "alt": "Encore Technologies"
+  },
+  "gallery": [
+    {
+      "src": "assets/img/media/photo-01.jpg",
+      "alt": "A large group of students posing in front of library bookshelves",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-02.jpg",
+      "alt": "Students gathered around tables in the library for a club meeting",
+      "width": 900,
+      "height": 1200
+    },
+    {
+      "src": "assets/img/media/photo-03.jpg",
+      "alt": "Two students with event lanyards laughing over snacks",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/img/media/photo-04.jpg",
+      "alt": "A team holding their prizes, standing with an adult mentor",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-05.jpg",
+      "alt": "A wide view of students working at tables in the library commons",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-06.jpg",
+      "alt": "Two students working on laptops, one of them smiling",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/img/media/photo-07.jpg",
+      "alt": "Students at computers with a presentation on the wall screens",
+      "width": 900,
+      "height": 1200
+    },
+    {
+      "src": "assets/img/media/photo-08.jpg",
+      "alt": "A team posing with a large printed portrait",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-09.jpg",
+      "alt": "A team working together around a laptop at a round table",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/img/media/photo-10.jpg",
+      "alt": "Four students posing, one wearing a costume helmet",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-11.jpg",
+      "alt": "Students working on laptops in a library lounge area",
+      "width": 900,
+      "height": 1200
+    },
+    {
+      "src": "assets/img/media/photo-12.jpg",
+      "alt": "Students brainstorming at a whiteboard",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "src": "assets/img/media/photo-13.jpg",
+      "alt": "Four students with event lanyards posing in front of a mural",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-14.jpg",
+      "alt": "Students coding on laptops at a library table",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/img/media/photo-15.jpg",
+      "alt": "A room full of students coding at long tables",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-16.jpg",
+      "alt": "Three students with event lanyards posing in front of a mural",
+      "width": 1200,
+      "height": 900
+    },
+    {
+      "src": "assets/img/media/photo-17.jpg",
+      "alt": "Two students chatting over snacks at a table",
+      "width": 1200,
+      "height": 800
+    },
+    {
+      "src": "assets/img/media/photo-18.jpg",
+      "alt": "A team working at a round table among the library shelves",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "src": "assets/img/media/photo-19.jpg",
+      "alt": "Students working at a round table covered in laptops",
+      "width": 1024,
+      "height": 768
+    },
+    {
+      "src": "assets/img/media/photo-20.jpg",
+      "alt": "Students working at laptops by the library windows",
+      "width": 1024,
+      "height": 768
+    }
+  ]
+}

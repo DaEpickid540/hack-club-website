@@ -1,7 +1,18 @@
-import { runReactorTask, runSetRouteTask, runPopupTask, runFlappyTask } from './minigames.js';
-import { showModal, bodyEl } from './game-modal.js';
+//imports
 
-// Titles and hints are adapted from the ones the tasks had in ia-life.
+import { runReactorTask, 
+  runSetRouteTask, 
+  runPopupTask, 
+  runFlappyTask 
+} from './minigames/index.js';
+
+
+import { 
+  showModal, 
+  bodyEl 
+} from './minigames/modal.js';
+
+// Borrowed minigames from ia-life
 const GAMES = {
   reactor: {
     run: runReactorTask,
@@ -11,17 +22,17 @@ const GAMES = {
   setroute: {
     run: runSetRouteTask,
     title: 'Set your route',
-    hint: 'Registration is open. Line the marker up with the target.',
+    hint: 'Registration is open. Line the marker up with the target, five times over.',
   },
   popups: {
     run: runPopupTask,
     title: 'The morning of',
-    hint: 'The laptop at the check-in desk has opinions. Clear the screen.',
+    hint: 'The check-in laptop has opinions. Clear the screen before it buries you.',
   },
   flappy: {
     run: runFlappyTask,
     title: 'While you wait',
-    hint: 'The badge queue is long and somebody left this open. Five gaps and it is yours.',
+    hint: 'The badge queue is long and somebody left this open. See how far you get.',
   },
 };
 
@@ -31,7 +42,7 @@ async function play(key) {
   await showModal();
   await game.run(game.title, game.hint);
 
-  // The task only resolves on a win, and only if the modal is still open.
+  // The game will only finish on a win, and only if the modal is still open.
   if (!document.getElementById('game-modal').classList.contains('show')) {
     return;
   }
@@ -40,7 +51,9 @@ async function play(key) {
   again.type = 'button';
   again.className = 'btn btn-hc mt-3 d-block mx-auto';
   again.innerHTML = '<i class="bi bi-arrow-repeat"></i> Play again';
-  again.addEventListener('click', function () { play(key); });
+  again.addEventListener('click', function () {
+    play(key);
+  });
 
   bodyEl.appendChild(again);
   again.focus();

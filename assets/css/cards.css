@@ -1,0 +1,59 @@
+/* ---------- Sections ---------- */
+.section {
+  padding: 5rem 0;
+}
+.section-alt {
+  background: var(--bg-alt);
+}
+.section-head {
+  max-width: 640px;
+  margin-bottom: 2.5rem;
+}
+.section-head h2 {
+  font-size: clamp(1.9rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+}
+.section-head p {
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hc-card {
+  height: 100%;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  box-shadow: var(--rest-shadow);
+}
+.hc-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--hc-red);
+  box-shadow: var(--shadow);
+}
+.hc-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.hc-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+.icon-tile {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  color: #fff;
+  background: var(--tile-1);
+  margin-bottom: 1.1rem;
+}
+.icon-tile.red {
+  background: var(--tile-2);
+}
+.icon-tile.alt {
+  background: var(--tile-3);
+}
