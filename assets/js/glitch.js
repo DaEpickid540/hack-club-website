@@ -88,8 +88,11 @@ function buildGlitch(host, spot) {
   host.appendChild(box);
 }
 
-GLITCH_SPOTS.forEach((spot) => {
-  document.querySelectorAll(spot.selector).forEach((host) => {
-    buildGlitch(host, spot);
+// The join accent comes from copy.json, so wait for the text to land.
+Promise.resolve(window.siteCopy).then(() => {
+  GLITCH_SPOTS.forEach((spot) => {
+    document.querySelectorAll(spot.selector).forEach((host) => {
+      buildGlitch(host, spot);
+    });
   });
 });

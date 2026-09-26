@@ -101,9 +101,9 @@
 
     <header class="page-hero">
       <div class="container-xl px-4 px-lg-5">
-        <span class="eyebrow">club members</span>
-        <h1 class="mb-3">Meet the <span class="accent">hackers.</span></h1>
-        <p class="lead mb-0">The students who run workshops, build projects, and organize CincyHacks.</p>
+        <span class="eyebrow" data-copy="members.hero.eyebrow"></span>
+        <h1 class="mb-3" data-copy="members.hero.title"></h1>
+        <p class="lead mb-0" data-copy="members.hero.lead"></p>
       </div>
     </header>
 
@@ -111,102 +111,29 @@
       <div class="container-xl px-4 px-lg-5">
         <!--
           HOW TO ADD YOURSELF
-          1. Put a square photo in assets/img/members/ (e.g. jane-doe.jpg)
-          2. Copy one <div class="col ..."> block below
-          3. Change the photo path, name, role, bio, and links
+          1. Put a square photo in assets/img/members/ (e.g. jane-doe.jpg) and add
+             it to assets/data/media.json under a name like "memberJaneDoe"
+          2. Copy one entry in "members.list" in assets/data/copy.json
+          3. Change the name, role, bio, photo (the media.json name), and links.
+             Leave a link empty ("") to hide that icon.
         -->
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4">
-
-          <div class="col">
-            <article class="member-card">
-              <img class="member-photo" data-media="memberPlaceholder" alt="Photo of Member Name" />
-              <div class="member-body">
-                <h3>Member Name</h3>
-                <p class="member-role">President</p>
-                <p class="member-bio">A few sentences about yourself: what you like to build, what you're learning, and a fun fact.</p>
-                <div class="member-links">
-                  <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                  <a href="#" aria-label="Personal website"><i class="bi bi-globe2"></i></a>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4" data-copy-list="members.list">
+          <template>
+            <div class="col">
+              <article class="member-card">
+                <img class="member-photo" data-media="memberPlaceholder" data-field-media="photo" data-field-alt="name" />
+                <div class="member-body">
+                  <h3 data-field="name"></h3>
+                  <p class="member-role" data-field="role"></p>
+                  <p class="member-bio" data-field="bio"></p>
+                  <div class="member-links">
+                    <a href="#" aria-label="GitHub" data-field-href="github"><i class="bi bi-github"></i></a>
+                    <a href="#" aria-label="Personal website" data-field-href="website"><i class="bi bi-globe2"></i></a>
+                  </div>
                 </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="col">
-            <article class="member-card">
-              <img class="member-photo" data-media="memberPlaceholder" alt="Photo of Member Name" />
-              <div class="member-body">
-                <h3>Member Name</h3>
-                <p class="member-role">Vice President</p>
-                <p class="member-bio">A few sentences about yourself: what you like to build, what you're learning, and a fun fact.</p>
-                <div class="member-links">
-                  <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                  <a href="#" aria-label="Personal website"><i class="bi bi-globe2"></i></a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="col">
-            <article class="member-card">
-              <img class="member-photo" data-media="memberPlaceholder" alt="Photo of Member Name" />
-              <div class="member-body">
-                <h3>Member Name</h3>
-                <p class="member-role">CincyHacks Lead</p>
-                <p class="member-bio">A few sentences about yourself: what you like to build, what you're learning, and a fun fact.</p>
-                <div class="member-links">
-                  <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                  <a href="#" aria-label="Personal website"><i class="bi bi-globe2"></i></a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="col">
-            <article class="member-card">
-              <img class="member-photo" data-media="memberPlaceholder" alt="Photo of Member Name" />
-              <div class="member-body">
-                <h3>Member Name</h3>
-                <p class="member-role">Member</p>
-                <p class="member-bio">A few sentences about yourself: what you like to build, what you're learning, and a fun fact.</p>
-                <div class="member-links">
-                  <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                  <a href="#" aria-label="Personal website"><i class="bi bi-globe2"></i></a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="col">
-            <article class="member-card">
-              <img class="member-photo" data-media="memberPlaceholder" alt="Photo of Member Name" />
-              <div class="member-body">
-                <h3>Member Name</h3>
-                <p class="member-role">Member</p>
-                <p class="member-bio">A few sentences about yourself: what you like to build, what you're learning, and a fun fact.</p>
-                <div class="member-links">
-                  <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                  <a href="#" aria-label="Personal website"><i class="bi bi-globe2"></i></a>
-                </div>
-              </div>
-            </article>
-          </div>
-
-          <div class="col">
-            <article class="member-card">
-              <img class="member-photo" data-media="memberPlaceholder" alt="Photo of Member Name" />
-              <div class="member-body">
-                <h3>Member Name</h3>
-                <p class="member-role">Member</p>
-                <p class="member-bio">A few sentences about yourself: what you like to build, what you're learning, and a fun fact.</p>
-                <div class="member-links">
-                  <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
-                  <a href="#" aria-label="Personal website"><i class="bi bi-globe2"></i></a>
-                </div>
-              </div>
-            </article>
-          </div>
-
+              </article>
+            </div>
+          </template>
         </div>
       </div>
     </section>
@@ -221,6 +148,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/copy.js"></script>
   <script src="assets/js/media.js"></script>
   <script src="assets/js/traces.js"></script>
   <script src="assets/js/glitch.js"></script>

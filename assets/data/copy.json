@@ -1,0 +1,210 @@
+{
+  "home": {
+    "hero": {
+      "label": "Mason High School",
+      "title": "Come for the workshops.\nStay and run a hackathon.",
+      "lead": "Interested in computer science, IT, or anything in between? Mason Hack Club is open to all students: workshops, hackathons, guest speakers, and more."
+    },
+    "stats": {
+      "lead": {
+        "value": "#1",
+        "text": "Ohio's largest high school student-led hackathon.",
+        "note": "That's CincyHacks, and club members run every part of it."
+      },
+      "aside": {
+        "value": "Free",
+        "text": "Open to all students. No experience needed."
+      }
+    },
+    "whoWeAre": {
+      "eyebrow": "who we are",
+      "title": "A club for students who build.",
+      "text": "We're a student-run chapter of Hack Club, a global network of high school coding clubs. We meet every week, and beginners sit next to experienced coders to learn, build, and ship projects. We're also the team behind CincyHacks, backed by our sponsors InfoTrust and Encore.",
+      "cards": {
+        "workshops": {
+          "title": "Workshops",
+          "text": "Hands-on sessions where you learn a skill and leave with something you built."
+        },
+        "hackathons": {
+          "title": "Hackathons",
+          "text": "Build a project from scratch in a weekend, including our own event, CincyHacks."
+        },
+        "speakers": {
+          "title": "Guest Speakers",
+          "text": "People working in tech share what they do and how they got there."
+        }
+      }
+    },
+    "goals": {
+      "eyebrow": "what we want to achieve",
+      "title": "Where we're headed",
+      "text": "Our goals for this year and beyond.",
+      "items": {
+        "attendees": {
+          "title": "More CincyHacks attendees",
+          "text": "Bring more students from across the region to CincyHacks every year."
+        },
+        "growth": {
+          "title": "More growth",
+          "text": "Grow club membership and help every member ship their first project."
+        },
+        "reach": {
+          "title": "More reach",
+          "text": "Partner with more schools, sponsors, and the local tech community."
+        },
+        "learning": {
+          "title": "More learning opportunities",
+          "text": "Run more workshops and bring in more guest speakers from the industry."
+        }
+      }
+    },
+    "accomplishments": {
+      "eyebrow": "past accomplishments",
+      "title": "What we've done so far",
+      "feature": {
+        "title": "The largest high school student-led hackathon in Ohio.",
+        "text": "CincyHacks is organized entirely by Mason Hack Club students, from planning and sponsorships to running the event."
+      },
+      "highlightsTitle": "Highlights",
+      "highlights": [
+        "Hosted Ohio's largest high school student-led hackathon",
+        "Partnered with sponsors InfoTrust and Encore",
+        "Weekly workshops open to every student",
+        "Add another accomplishment here"
+      ]
+    },
+    "sponsors": {
+      "eyebrow": "sponsors",
+      "title": "Thank you to our sponsors",
+      "text": "Their support makes our events and workshops possible."
+    },
+    "media": {
+      "eyebrow": "media",
+      "title": "Photos from the club",
+      "text": "Meetings, workshops, and CincyHacks."
+    },
+    "join": {
+      "eyebrow": "join us",
+      "title": "Ready to *start hacking?*",
+      "text": "Join our Schoology group to get meeting updates, workshop info, and CincyHacks news.",
+      "qrHint": "Scan with your phone, or use the button."
+    }
+  },
+
+  "members": {
+    "hero": {
+      "eyebrow": "club members",
+      "title": "Meet the *hackers.*",
+      "lead": "The students who run workshops, build projects, and organize CincyHacks."
+    },
+    "list": [
+      {
+        "name": "Member Name",
+        "role": "President",
+        "bio": "A few sentences about yourself: what you like to build, what you're learning, and a fun fact.",
+        "photo": "memberPlaceholder",
+        "github": "#",
+        "website": "#"
+      },
+      {
+        "name": "Member Name",
+        "role": "Vice President",
+        "bio": "A few sentences about yourself: what you like to build, what you're learning, and a fun fact.",
+        "photo": "memberPlaceholder",
+        "github": "#",
+        "website": "#"
+      },
+      {
+        "name": "Member Name",
+        "role": "CincyHacks Lead",
+        "bio": "A few sentences about yourself: what you like to build, what you're learning, and a fun fact.",
+        "photo": "memberPlaceholder",
+        "github": "#",
+        "website": "#"
+      },
+      {
+        "name": "Member Name",
+        "role": "Member",
+        "bio": "A few sentences about yourself: what you like to build, what you're learning, and a fun fact.",
+        "photo": "memberPlaceholder",
+        "github": "#",
+        "website": "#"
+      },
+      {
+        "name": "Member Name",
+        "role": "Member",
+        "bio": "A few sentences about yourself: what you like to build, what you're learning, and a fun fact.",
+        "photo": "memberPlaceholder",
+        "github": "#",
+        "website": "#"
+      },
+      {
+        "name": "Member Name",
+        "role": "Member",
+        "bio": "A few sentences about yourself: what you like to build, what you're learning, and a fun fact.",
+        "photo": "memberPlaceholder",
+        "github": "#",
+        "website": "#"
+      }
+    ]
+  },
+
+  "games": {
+    "hero": {
+      "eyebrow": "arcade",
+      "title": "Do your *tasks.*",
+      "lead": "Four Among Us-style minigames built by club members. Each one takes under a minute."
+    },
+    "reactor": {
+      "title": "Systems Check",
+      "text": "A pattern lights up slowly on the left panel. Mirror it on the right without hitting a wrong cell.",
+      "hint": "The demo machine needs a reboot sequence. Repeat the pattern."
+    },
+    "setroute": {
+      "title": "Set Your Route",
+      "text": "Drag the marker onto the ring, then do it again. Five rounds, and arrow keys work too.",
+      "hint": "Registration is open. Line the marker up with the target, five times over."
+    },
+    "popups": {
+      "title": "The Morning Of",
+      "text": "Close every pop-up against the clock. A new one opens every 4 seconds, and every misclick opens 2 more.",
+      "hint": "The check-in laptop has opinions. Clear the screen before it buries you."
+    },
+    "flappy": {
+      "title": "While You Wait",
+      "text": "No finish line. Tap, click, or press space to flap and see how far you get. Your best run is saved.",
+      "hint": "The badge queue is long and somebody left this open. See how far you get."
+    }
+  },
+
+  "cincyhacks": {
+    "hero": {
+      "eyebrow": "cincyhacks",
+      "title": "Cincy*Hacks*",
+      "lead": "Event tagline goes here."
+    },
+    "about": {
+      "eyebrow": "about",
+      "title": "About the event",
+      "text": "Description coming soon.",
+      "date": "TBD",
+      "location": "TBD",
+      "eligibility": "TBD"
+    },
+    "schedule": {
+      "eyebrow": "schedule",
+      "title": "Schedule",
+      "placeholder": "Schedule coming soon"
+    },
+    "sponsors": {
+      "eyebrow": "sponsors",
+      "title": "Sponsors",
+      "placeholder": "Sponsor logos coming soon"
+    },
+    "faq": {
+      "eyebrow": "faq",
+      "title": "FAQ",
+      "placeholder": "FAQ coming soon"
+    }
+  }
+}

@@ -13,34 +13,20 @@ import {
 } from './minigames/modal.js';
 
 // Borrowed minigames from ia-life
+// Titles and hints come from "games" in assets/data/copy.json.
 const GAMES = {
-  reactor: {
-    run: runReactorTask,
-    title: 'Systems check',
-    hint: 'The demo machine needs a reboot sequence. Repeat the pattern.',
-  },
-  setroute: {
-    run: runSetRouteTask,
-    title: 'Set your route',
-    hint: 'Registration is open. Line the marker up with the target, five times over.',
-  },
-  popups: {
-    run: runPopupTask,
-    title: 'The morning of',
-    hint: 'The check-in laptop has opinions. Clear the screen before it buries you.',
-  },
-  flappy: {
-    run: runFlappyTask,
-    title: 'While you wait',
-    hint: 'The badge queue is long and somebody left this open. See how far you get.',
-  },
+  reactor: runReactorTask,
+  setroute: runSetRouteTask,
+  popups: runPopupTask,
+  flappy: runFlappyTask,
 };
 
 async function play(key) {
-  const game = GAMES[key];
+  const copy = await window.siteCopy;
+  const text = (copy && copy.games[key]) || {};
 
   await showModal();
-  await game.run(game.title, game.hint);
+  await GAMES[key](text.title || '', text.hint || '');
 
   // The game will only finish on a win, and only if the modal is still open.
   if (!document.getElementById('game-modal').classList.contains('show')) {
