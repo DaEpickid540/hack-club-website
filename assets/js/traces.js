@@ -134,7 +134,11 @@ function buildTraces(hero) {
 }
 
 const heroes = document.querySelectorAll(".page-hero");
-heroes.forEach(buildTraces);
+
+// The hero's text comes from copy.json, so size the traces once it has landed.
+Promise.resolve(window.siteCopy).then(() => {
+  heroes.forEach(buildTraces);
+});
 
 // Rebuild when the width changes; height alone changes as mobile URL bars hide.
 let traceWidth = window.innerWidth;

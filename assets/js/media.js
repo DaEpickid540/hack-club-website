@@ -4,6 +4,7 @@
 //   <img data-media="logo">      takes media.logo's src and alt
 //   <link rel="icon" data-media> takes the same src as its href
 //   <div data-gallery>           gets one tile per entry in media.gallery
+// It waits for copy.js, since the member cards it builds hold images too.
 
 const MEDIA_URL = "assets/data/media.json";
 
@@ -70,14 +71,15 @@ function renderGallery(grid, photos) {
   });
 }
 
-fetch(MEDIA_URL)
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error(MEDIA_URL + " returned " + response.status);
-    }
-    return response.json();
-  })
-  .then((media) => {
+const mediaData = fetch(MEDIA_URL).then((response) => {
+  if (!response.ok) {
+    throw new Error(MEDIA_URL + " returned " + response.status);
+  }
+  return response.json();
+});
+
+Promise.all([mediaData, window.siteCopy])
+  .then(([media]) => {
     document.querySelectorAll("[data-media]").forEach((el) => {
       const entry = media[el.dataset.media];
       if (entry) {
