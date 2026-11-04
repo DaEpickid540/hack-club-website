@@ -44,4 +44,4 @@ Disallow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://personal-suite-ca587.web.app/sitemap.xml
+Sitemap: https://hack.comet-tech.org/sitemap.xml
