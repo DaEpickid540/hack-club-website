@@ -1,5 +1,4 @@
-// Set your route: drag the marker onto the ring, over several rounds. Ported
-// from the ia-life game; styles are in styles.css (minigames section).
+// Drag the marker onto the ring over several rounds. Ported from ia-life; styles in styles.css.
 
 import { openModal } from './modal.js';
 
@@ -16,14 +15,7 @@ function routeGoal(from) {
   return goal;
 }
 
-/**
- * Set route task: drag the marker onto the target, over several rounds. Each
- * round moves the target somewhere new and the marker starts where it stopped.
- *
- * @param {string} title - modal heading
- * @param {string} hint - line under the heading
- * @returns {Promise<void>} resolves once every round is done
- */
+/** Set route task: drag the marker onto a new target each round. Resolves after the last. */
 export function runSetRouteTask(title, hint) {
   const body = openModal(title, hint);
 

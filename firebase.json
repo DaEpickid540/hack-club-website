@@ -9,8 +9,6 @@
       ".git/**",
       ".claude/**",
       ".firebase/**",
-      "css/**",
-      "js/**",
       "**/node_modules/**"
     ],
     "cleanUrls": true

@@ -1,13 +1,10 @@
-// While you wait: an endless Flappy run with a best score kept in this
-// browser. Ported from the ia-life game; styles are in styles.css (minigames section).
+// Endless Flappy run with a per-browser best score. Ported from ia-life; styles in styles.css.
 
 import { openModal } from './modal.js';
 
-// Flappy has no target: it runs until the player closes it, and keeps the
-// best score this browser has seen.
+// No target score: runs until the modal closes and keeps this browser's best.
 const FLAPPY_BEST_KEY = 'flappy-best';
-// One flap lifts the bird by lift squared over twice gravity, so these two have
-// to stay well under the gap or no long run is possible.
+// One flap rises lift²/(2·gravity); keep that well under the gap or long runs are impossible.
 const FLAPPY_GRAVITY = 0.38;
 const FLAPPY_LIFT = -4.6;
 const FLAPPY_GAP = 104;
@@ -40,15 +37,7 @@ function themeColour(name, fallback) {
   return value.trim() || fallback;
 }
 
-/**
- * Flappy task: fly through the gaps for as long as you can. There is no target
- * score and no ceiling; a pipe or the floor ends the run and the next one
- * starts straight away. The best run is kept in this browser.
- *
- * @param {string} title - modal heading
- * @param {string} hint - line under the heading
- * @returns {Promise<void>} never resolves; the run ends when the modal closes
- */
+/** Flappy task: fly the gaps until a pipe or the floor ends the run; never resolves. */
 export function runFlappyTask(title, hint) {
   const body = openModal(title, hint);
 
@@ -67,8 +56,7 @@ export function runFlappyTask(title, hint) {
     const width = Math.round(box.width);
     const height = Math.round(box.height);
 
-    // The backing store is scaled for the display, and every coordinate below
-    // stays in CSS pixels.
+    // Backing store is scaled for the display; coordinates below stay in CSS pixels.
     const ratio = window.devicePixelRatio || 1;
 
     canvas.width = Math.round(width * ratio);
@@ -231,8 +219,7 @@ export function runFlappyTask(title, hint) {
 
     status.textContent = 'Tap, click, or press space to start. Best ' + best + '.';
 
-    // Focus directly rather than through a frame callback: the game loop can
-    // be throttled, and the keyboard should work before the first frame.
+    // Focus now, not in a frame callback, so keys work before the (possibly throttled) first frame.
     canvas.focus();
 
     loop = window.requestAnimationFrame(step);

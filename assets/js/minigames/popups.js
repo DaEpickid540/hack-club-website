@@ -1,5 +1,4 @@
-// The morning of: close every pop-up against the clock while new ones keep
-// opening. Ported from the ia-life game; styles are in styles.css (minigames section).
+// Close every pop-up against the clock while new ones keep opening. Ported from ia-life; styles in styles.css.
 
 import { openModal } from './modal.js';
 
@@ -8,8 +7,7 @@ const POPUP_COUNT = 6;
 const POPUP_SPAWN_MS = 4000;
 const POPUP_MISCLICK_PENALTY = 2;
 
-// What the fake windows say. The joke is that none of them are the thing the
-// player was trying to do.
+// Fake window text; the joke is that none of them are what the player wanted.
 const POPUP_WINDOWS = [
   { title: 'Registration', text: 'Are you sure you want to leave this page?' },
   { title: 'Reminder', text: 'The run of show has been updated. Again.' },
@@ -52,15 +50,7 @@ function seconds(ms) {
   return (ms / 1000).toFixed(1) + 's';
 }
 
-/**
- * Popup task: a screen full of windows that are not what the player wanted.
- * Close all of them against the clock. A new window opens every few seconds,
- * and clicking anything but a close button opens two more.
- *
- * @param {string} title - modal heading
- * @param {string} hint - line under the heading
- * @returns {Promise<void>} resolves once the last window is gone
- */
+/** Popup task: close every window (clicking elsewhere opens two more); resolves when none are left. */
 export function runPopupTask(title, hint) {
   const body = openModal(title, hint);
 
@@ -98,8 +88,7 @@ export function runPopupTask(title, hint) {
       const popup = document.createElement('div');
       popup.className = 'popup-window';
 
-      // Percentages, so the scatter works at any screen size. Each window sits
-      // above the one before it, which is what makes the pile feel like a pile.
+      // Percent positions fit any screen; each window stacks above the last.
       popup.style.left = (4 + Math.random() * 42) + '%';
       popup.style.top = (4 + Math.random() * 46) + '%';
       popup.style.zIndex = String(made);

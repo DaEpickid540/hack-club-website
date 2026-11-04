@@ -1,8 +1,4 @@
-// Hero circuit traces
-// Draws a few right-angle traces on the hero grid and sends a glowing signal
-// along each. The grid and traces sit on one layer that drifts by exactly one
-// cell per loop, so the lines always stay lined up. Colors come from CSS tokens,
-// so the theme toggle restyles them without a rebuild.
+// Hero circuit traces: glowing signals on a grid layer that drifts one cell per loop; colors come from CSS tokens.
 const GRID = 42;
 const PULSE = 56;
 const SVG_NS = "http://www.w3.org/2000/svg";
@@ -62,8 +58,7 @@ function buildTraces(hero) {
   const layer = document.createElement("div");
   layer.className = "hero-traces-layer";
 
-  // Layer coordinates: grid lines sit at multiples of GRID, half a pixel in
-  // so a 1px line lands on the same pixels as the background grid.
+  // Grid lines at multiples of GRID, offset 0.5px so 1px lines match the background grid.
   const svg = svgEl("svg", { width: cols * GRID + 1, height: rows * GRID + 1 });
   function at(cell) {
     return cell * GRID + 0.5;
@@ -113,8 +108,7 @@ function buildTraces(hero) {
     const length = pulse.getTotalLength();
     pulse.style.strokeDasharray = PULSE + " " + (length + PULSE);
 
-    // The signal runs for part of each loop and waits off the end for the
-    // rest, so the traces fire at different moments instead of in step.
+    // Each signal runs for part of the loop and idles the rest, so traces fire out of step.
     const travel = 0.45 + Math.random() * 0.3;
 
     pulse.animate(

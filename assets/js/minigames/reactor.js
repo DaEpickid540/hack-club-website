@@ -1,5 +1,4 @@
-// Systems check: a pattern lights up on the left panel and the player mirrors
-// it on the right. Ported from the ia-life game; styles are in styles.css (minigames section).
+// Mirror the pattern from the left panel on the right. Ported from ia-life; styles in styles.css.
 
 import { openModal } from './modal.js';
 
@@ -45,14 +44,7 @@ function makeGrid(interactive) {
   return { grid: grid, cells: cells };
 }
 
-/**
- * Reactor task: a pattern lights up on the left panel, the player repeats it on
- * the right. A wrong cell resets the attempt and shows the pattern again.
- *
- * @param {string} title - modal heading
- * @param {string} hint - line under the heading
- * @returns {Promise<void>} resolves once the pattern is matched
- */
+/** Reactor task: repeat the pattern; a wrong cell resets it. Resolves once matched. */
 export function runReactorTask(title, hint) {
   const body = openModal(title, hint);
 
@@ -104,8 +96,7 @@ export function runReactorTask(title, hint) {
           return;
         }
 
-        // The pattern is on screen the whole time, so any order will do. Only
-        // a cell that is not part of it counts as a miss.
+        // Pattern stays visible, so any order works; only a cell outside it is a miss.
         if (!pattern.includes(index)) {
           status.textContent = 'Wrong cell. Watch again.';
           showPattern();
