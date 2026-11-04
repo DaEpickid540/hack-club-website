@@ -16,8 +16,7 @@ if (sidebarEl) {
   });
 }
 
-// Light / dark theme
-// The inline script in <head> sets the starting theme
+// Light / dark theme (the inline script in <head> sets the starting one)
 const root = document.documentElement;
 const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
 const themeColors = { 

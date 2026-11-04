@@ -12,8 +12,7 @@ import {
   bodyEl 
 } from './minigames/modal.js';
 
-// Borrowed minigames from ia-life
-// Titles and hints come from "games" in assets/data/copy.json.
+// Minigames borrowed from ia-life; titles and hints come from "games" in copy.json.
 const GAMES = {
   reactor: runReactorTask,
   setroute: runSetRouteTask,

@@ -1,10 +1,4 @@
-// Image links
-// Every image on the site gets its src from assets/data/media.json, so swapping
-// a photo or the logo means editing that one file instead of every page.
-//   <img data-media="logo">      takes media.logo's src and alt
-//   <link rel="icon" data-media> takes the same src as its href
-//   <div data-gallery>           gets one tile per entry in media.gallery
-// It waits for copy.js, since the member cards it builds hold images too.
+// Fills [data-media] images, the favicon and [data-gallery] from assets/data/media.json; waits for copy.js.
 
 const MEDIA_URL = "assets/data/media.json";
 
@@ -94,8 +88,7 @@ Promise.all([mediaData, window.siteCopy])
       renderGallery(grid, media.gallery || []);
     });
 
-    // The gallery arrives after the browser has already jumped to a #section
-    // link, and it pushes everything below it down, so jump again.
+    // The gallery loads after the #hash jump and shifts the page, so jump again.
     const target = grids.length && location.hash && document.querySelector(location.hash);
     if (target) {
       target.scrollIntoView();

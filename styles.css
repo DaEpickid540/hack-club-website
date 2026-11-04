@@ -1,9 +1,24 @@
-/* Mason Hack Club stylesheet. Brand: red #c44569, blue #041f3b. Theme is set by data-bs-theme on <html> (main.js). */
-/* Order matters: later sections override earlier ones, so shapes and motion come last. */
+/* ==========================================================
+   Mason Hack Club: stylesheet
+   Brand: Red #c44569, Blue #041f3b
 
-/* Tokens */
+   One file, in cascade order: later sections override earlier
+   ones, so tokens come first, the shape system (which restyles
+   corners and shadows everywhere) comes near the end, and the
+   reduced-motion overrides come last.
+   The theme is set by data-bs-theme on <html> (see main.js).
 
-/* Brand constants (same in both modes) */
+   Sections: tokens, base, buttons, sidebar, hero, footer, stats,
+   cards, goals, feature, sponsors, gallery, join, members,
+   boilerplate, minigames, glitch, shapes, motion.
+   ========================================================== */
+
+
+/* ==========================================================
+   tokens
+   ========================================================== */
+
+/* ---------- Brand constants (same in both modes) ---------- */
 :root {
   --hc-red: #c44569;
   --hc-red-dark: #a3324f;
@@ -19,7 +34,7 @@
   --cut-sm: 0px;
 }
 
-/* Light mode (default) */
+/* ---------- Light mode (default) ---------- */
 :root,
 [data-bs-theme="light"] {
   color-scheme: light;
@@ -87,7 +102,7 @@
   --bracket: #c44569;
 }
 
-/* Dark mode */
+/* ---------- Dark mode ---------- */
 [data-bs-theme="dark"] {
   color-scheme: dark;
 
@@ -153,7 +168,12 @@
   --bracket: #e27b98;
 }
 
-/* Base */
+
+/* ==========================================================
+   base
+   ========================================================== */
+
+/* ---------- Base ---------- */
 :root {
   --bs-primary: var(--hc-red);
   --bs-primary-rgb: 196, 69, 105;
@@ -183,7 +203,12 @@ h1, h2, h3, h4, .display-font {
   font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
-/* Buttons */
+
+/* ==========================================================
+   buttons
+   ========================================================== */
+
+/* ---------- Buttons ---------- */
 .btn-hc {
   --bs-btn-bg: var(--hc-red);
   --bs-btn-border-color: var(--hc-red);
@@ -211,7 +236,12 @@ h1, h2, h3, h4, .display-font {
   padding: 0.65rem 1.4rem;
 }
 
-/* Sidebar */
+
+/* ==========================================================
+   sidebar
+   ========================================================== */
+
+/* ---------- Sidebar ---------- */
 .sidebar {
   /* !important beats Bootstrap's transparent .offcanvas-lg background on desktop */
   background-color: var(--sidebar-bg) !important;
@@ -404,7 +434,12 @@ h1, h2, h3, h4, .display-font {
   }
 }
 
-/* Page header */
+
+/* ==========================================================
+   hero
+   ========================================================== */
+
+/* ---------- Page header ---------- */
 .page-hero {
   position: relative;
   background: var(--hero-bg);
@@ -572,7 +607,12 @@ h1, h2, h3, h4, .display-font {
   box-shadow: 4px 4px 0 var(--hard-shadow-hover);
 }
 
-/* Footer */
+
+/* ==========================================================
+   footer
+   ========================================================== */
+
+/* ---------- Footer ---------- */
 .site-footer {
   background: var(--footer-bg);
   border-top: 1px solid var(--border);
@@ -595,7 +635,15 @@ h1, h2, h3, h4, .display-font {
   color: var(--accent-text);
 }
 
-/* Stat callouts: a wide solid one and a narrow mirrored outline one, overlapping the hero bottom */
+
+/* ==========================================================
+   stats
+   ========================================================== */
+
+/* ---------- Stat callouts ----------
+   Two deliberately unequal callouts that overlap the bottom of the hero: a
+   wide solid one for the headline stat, a narrow outlined one beside it with
+   its chamfer mirrored. The other stats live in the "Who we are" copy. */
 .stat-callouts {
   position: relative;
   z-index: 2;
@@ -652,7 +700,12 @@ h1, h2, h3, h4, .display-font {
   color: var(--muted);
 }
 
-/* Sections */
+
+/* ==========================================================
+   cards
+   ========================================================== */
+
+/* ---------- Sections ---------- */
 .section {
   padding: 5rem 0;
 }
@@ -712,6 +765,11 @@ h1, h2, h3, h4, .display-font {
   background: var(--tile-3);
 }
 
+
+/* ==========================================================
+   goals
+   ========================================================== */
+
 /* Goal list */
 .goal {
   display: flex;
@@ -739,6 +797,11 @@ h1, h2, h3, h4, .display-font {
   margin: 0;
   font-size: 0.95rem;
 }
+
+
+/* ==========================================================
+   feature
+   ========================================================== */
 
 /* Accomplishment feature */
 .feature {
@@ -790,6 +853,11 @@ h1, h2, h3, h4, .display-font {
 .mini-list i {
   color: var(--accent-text);
 }
+
+
+/* ==========================================================
+   sponsors
+   ========================================================== */
 
 /* Sponsors */
 .sponsor {
@@ -844,6 +912,11 @@ a.sponsor {
   opacity: 0.9;
 }
 
+
+/* ==========================================================
+   gallery
+   ========================================================== */
+
 /* Media gallery */
 .media-tile {
   aspect-ratio: 4 / 3;
@@ -865,6 +938,11 @@ a.sponsor {
   height: 100%;
   object-fit: cover;
 }
+
+
+/* ==========================================================
+   join
+   ========================================================== */
 
 /* CTA */
 .cta {
@@ -920,7 +998,12 @@ a.sponsor {
   }
 }
 
-/* Members */
+
+/* ==========================================================
+   members
+   ========================================================== */
+
+/* ---------- Members ---------- */
 .member-card {
   height: 100%;
   background: var(--surface);
@@ -988,7 +1071,12 @@ a.sponsor {
   color: #fff;
 }
 
-/* Placeholder / boilerplate */
+
+/* ==========================================================
+   boilerplate
+   ========================================================== */
+
+/* ---------- Placeholder / boilerplate ---------- */
 .placeholder-block {
   border: 2px dashed var(--border);
   border-radius: var(--radius);
@@ -1011,7 +1099,12 @@ a.sponsor {
   font-size: 1.1rem;
 }
 
-/* Minigames (ported from ia-life) */
+
+/* ==========================================================
+   minigames
+   ========================================================== */
+
+/* ---------- MINIGAMES (ported from ia-life) ---------- */
 .game-card .icon-tile {
   margin-bottom: 1rem;
 }
@@ -1217,7 +1310,15 @@ button.reactor-cell:focus-visible {
   outline-offset: 2px;
 }
 
-/* Glitch effect: pink/red bars placed by glitch.js (hero corner, hackathon card, "start hacking?"); ignore the mouse */
+
+/* ==========================================================
+   glitch
+   ========================================================== */
+
+/* ---------- Glitch effect ----------
+   Pink and red bars built by glitch.js. Clusters sit in the other pages'
+   hero corner (the home page hero has none), the hackathon card's padding,
+   and on top of "start hacking?". All of them ignore the mouse. */
 .glitch {
   position: absolute;
   z-index: 0;
@@ -1311,7 +1412,15 @@ button.reactor-cell:focus-visible {
   }
 }
 
-/* Shapes: chamfered corners, 2px edges, hard offset shadows, corner brackets. Kept late so it wins over the defaults above */
+
+/* ==========================================================
+   shapes
+   ========================================================== */
+
+/* ---------- SHAPES ----------
+   Chamfered (bevelled) top-left and bottom-right corners, brutalist 2px
+   edges with hard offset shadows, and corner brackets on the other two
+   corners. Declared last so it wins over the softer defaults above. */
 @supports (corner-shape: bevel) {
   :root {
     --cut-lg: 18px;
@@ -1451,7 +1560,10 @@ button.reactor-cell:focus-visible {
   border-radius: 3px 0;
 }
 
-/* Reduced motion */
+
+/* ==========================================================
+   motion
+   ========================================================== */
 
 @media (prefers-reduced-motion: reduce) {
   * {

@@ -1,20 +1,4 @@
-// Page text
-// Headlines, paragraphs, and card text come from assets/data/copy.json, so
-// rewording the site means editing that one file instead of the HTML.
-//   <h2 data-copy="home.join.title">   takes that string as its text
-//   <ul data-copy-list="home.x.items"> clones its <template> once per entry
-//
-// Inside a string, *words* become <span class="accent">words</span> and a
-// line break ("\n") becomes <br>.
-//
-// Inside a list's <template>, per entry (a plain string counts as { text }):
-//   data-field="name"         text, formatted like data-copy
-//   data-field-href="github"  the link's href; the element is dropped if empty
-//   data-field-media="photo"  becomes data-media, so media.js fills the image
-//   data-field-alt="name"     the image's alt
-//
-// window.siteCopy resolves once the text is on the page (to the copy, or null
-// if it failed to load). Scripts that measure or decorate text wait for it.
+// Fills [data-copy] text and [data-copy-list] templates from assets/data/copy.json (*x* = accent, \n = <br>); window.siteCopy resolves when done.
 
 const COPY_URL = "assets/data/copy.json";
 
@@ -24,8 +8,7 @@ function copyLookup(copy, path) {
   }, copy);
 }
 
-// Builds nodes rather than setting innerHTML, so a stray "<" in the JSON
-// shows up as text instead of becoming markup.
+// Builds nodes instead of using innerHTML so a stray "<" in the JSON stays text.
 function fillText(el, text) {
   el.replaceChildren();
 

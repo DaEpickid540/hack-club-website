@@ -1,5 +1,4 @@
-// Stands in for ia-life's modal.js: each game calls openModal(title, hint)
-// and renders into the body it returns. Here that body lives in a Bootstrap modal.
+// Stand-in for ia-life's modal.js: openModal(title, hint) returns a Bootstrap modal body to render into.
 
 const dialog = document.getElementById('game-modal');
 const titleEl = dialog.querySelector('[data-game-title]');
@@ -8,13 +7,7 @@ const bodyEl = dialog.querySelector('[data-game-body]');
 
 export const modal = bootstrap.Modal.getOrCreateInstance(dialog);
 
-/**
- * Sets the heading and hint, clears the body, and returns it to render into.
- *
- * @param {string} title - heading text
- * @param {string} hint - one line under the heading, or an empty string
- * @returns {HTMLElement} the body element
- */
+/** Sets the heading and hint, clears the body, and returns it. */
 export function openModal(title, hint) {
   titleEl.textContent = title;
   hintEl.textContent = hint || '';

@@ -1,10 +1,4 @@
-// Glitch effect
-// Small clusters of pink and red bars that sit still, then jitter in short bursts.
-//   - Other pages' heroes: a cluster in the top-right corner. The home page
-//     hero has none, so its logo card stays clean.
-//   - Hackathon card: a cluster in its bottom-right padding.
-//   - Join section: a faint cluster on top of the words "start hacking?".
-// Styling and the animation are in styles.css (glitch section); this file only places the bars.
+// Glitch effect: places pink/red bar clusters (other heroes, hackathon card, "start hacking?"); styling lives in styles.css.
 
 const GLITCH_SPOTS = [
   {
@@ -53,8 +47,7 @@ function glitchPiece(className, width, height, spot) {
   piece.style.setProperty("--glitch-delay", (-glitchRandom(0, 6)).toFixed(2) + "s");
   piece.style.setProperty("--glitch-shift", glitchRandom(-28, 28).toFixed(0) + "px");
 
-  // Pixels rest a little brighter so they read against the bars.
-  // (The animation owns opacity, so the boost has to go into the resting value.)
+  // Resting brightness boost so pixels read against the bars (the animation owns opacity).
   let boost = 0;
 
   if (className.includes("glitch-pixel")) {
