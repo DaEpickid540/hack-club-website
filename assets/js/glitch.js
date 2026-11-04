@@ -4,7 +4,7 @@
 //     hero has none, so its logo card stays clean.
 //   - Hackathon card: a cluster in its bottom-right padding.
 //   - Join section: a faint cluster on top of the words "start hacking?".
-// Styling and the animation are in glitch.css; this file only places the bars.
+// Styling and the animation are in styles.css (glitch section); this file only places the bars.
 
 const GLITCH_SPOTS = [
   {
@@ -32,7 +32,7 @@ const GLITCH_SPOTS = [
   },
 ];
 
-// Four tones, all pink or red, picked with the pink-N classes in glitch.css.
+// Four tones, all pink or red, picked with the pink-N classes in styles.css (glitch section).
 const GLITCH_TONES = 4;
 
 function glitchRandom(min, max) {

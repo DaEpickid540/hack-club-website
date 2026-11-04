@@ -1,5 +1,5 @@
 // The morning of: close every pop-up against the clock while new ones keep
-// opening. Ported from the ia-life game; styles are in minigames.css.
+// opening. Ported from the ia-life game; styles are in styles.css (minigames section).
 
 import { openModal } from './modal.js';
 

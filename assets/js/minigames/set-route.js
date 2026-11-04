@@ -1,5 +1,5 @@
 // Set your route: drag the marker onto the ring, over several rounds. Ported
-// from the ia-life game; styles are in minigames.css.
+// from the ia-life game; styles are in styles.css (minigames section).
 
 import { openModal } from './modal.js';
 

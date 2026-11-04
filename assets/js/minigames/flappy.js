@@ -1,5 +1,5 @@
 // While you wait: an endless Flappy run with a best score kept in this
-// browser. Ported from the ia-life game; styles are in minigames.css.
+// browser. Ported from the ia-life game; styles are in styles.css (minigames section).
 
 import { openModal } from './modal.js';
 

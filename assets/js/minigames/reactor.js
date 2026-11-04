@@ -1,5 +1,5 @@
 // Systems check: a pattern lights up on the left panel and the player mirrors
-// it on the right. Ported from the ia-life game; styles are in minigames.css.
+// it on the right. Ported from the ia-life game; styles are in styles.css (minigames section).
 
 import { openModal } from './modal.js';
 
