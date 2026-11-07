@@ -193,7 +193,11 @@ a:hover {
   color: var(--hc-red);
 }
 
-h1, h2, h3, h4, .display-font {
+h1,
+h2,
+h3,
+h4,
+.display-font {
   font-family: "Space Grotesk", system-ui, sans-serif;
   letter-spacing: -0.02em;
   color: var(--heading);
@@ -393,7 +397,8 @@ h1, h2, h3, h4, .display-font {
 .side-nav .sub + .sub {
   margin-top: -2px;
 }
-.side-nav a, .theme-toggle {
+.side-nav a,
+.theme-toggle {
   border: 2px solid var(--edge);
   transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s, color 0.12s;
 }
@@ -412,7 +417,8 @@ h1, h2, h3, h4, .display-font {
   padding-bottom: 1.25rem;
   scrollbar-width: thin;
 }
-.side-nav a:hover, .theme-toggle:hover {
+.side-nav a:hover,
+.theme-toggle:hover {
   transform: translate(-2px, -2px);
   box-shadow: 3px 3px 0 var(--edge);
 }
@@ -649,7 +655,8 @@ h1, h2, h3, h4, .display-font {
   z-index: 2;
   margin-top: -2.5rem;
 }
-.stat-lead, .stat-aside {
+.stat-lead,
+.stat-aside {
   height: 100%;
   border: 2px solid var(--edge);
   corner-shape: bevel;
@@ -1429,16 +1436,40 @@ button.reactor-cell:focus-visible {
   }
 }
 
-.hc-card, .goal, .sponsor, .member-card, .placeholder-block, .feature,
-.media-tile, .game-modal .modal-content, .hero-logo, .btn-hc, .btn-hc-outline,
-.icon-tile, .member-links a, .badge-hc, .side-nav a, .theme-toggle, .brand img,
-.reactor-grid, .route-screen, .popup-screen, .popup-window, .flappy-screen,
+.hc-card,
+.goal,
+.sponsor,
+.member-card,
+.placeholder-block,
+.feature,
+.media-tile,
+.game-modal .modal-content,
+.hero-logo,
+.btn-hc,
+.btn-hc-outline,
+.icon-tile,
+.member-links a,
+.badge-hc,
+.side-nav a,
+.theme-toggle,
+.brand img,
+.reactor-grid,
+.route-screen,
+.popup-screen,
+.popup-window,
+.flappy-screen,
 .popup-close {
   corner-shape: bevel;
 }
 
 /* Cards and panels */
-.hc-card, .goal, .sponsor, .member-card, .placeholder-block, .feature, .media-tile {
+.hc-card,
+.goal,
+.sponsor,
+.member-card,
+.placeholder-block,
+.feature,
+.media-tile {
   position: relative;
   border: 2px solid var(--edge);
   border-radius: var(--cut-lg) 0;
@@ -1456,13 +1487,27 @@ button.reactor-cell:focus-visible {
 }
 
 /* Every brutalist box lifts on hover and its shadow turns red */
-.hc-card, .goal, .sponsor, .member-card, .placeholder-block, .feature,
-.media-tile, .stat-lead, .stat-aside, .join-qr {
+.hc-card,
+.goal,
+.sponsor,
+.member-card,
+.placeholder-block,
+.feature,
+.media-tile,
+.stat-lead,
+.stat-aside,
+.join-qr {
   transition: transform 0.15s, box-shadow 0.15s;
 }
-.hc-card:hover, .goal:hover, .sponsor:hover, .member-card:hover,
-.placeholder-block:hover, .feature:hover, .media-tile:hover,
-.stat-aside:hover, .join-qr:hover {
+.hc-card:hover,
+.goal:hover,
+.sponsor:hover,
+.member-card:hover,
+.placeholder-block:hover,
+.feature:hover,
+.media-tile:hover,
+.stat-aside:hover,
+.join-qr:hover {
   transform: translate(-3px, -3px);
   border-color: var(--edge);
   box-shadow: 8px 8px 0 var(--hard-shadow-hover);
@@ -1478,10 +1523,20 @@ button.reactor-cell:focus-visible {
 
 /* Corner brackets: two bordered squares, top-right on ::before and
    bottom-left on ::after, each showing only its two outer edges */
-.hc-card::before, .goal::before, .sponsor::before, .member-card::before,
-.placeholder-block::before, .feature::before, .media-tile::before,
-.hc-card::after, .goal::after, .sponsor::after, .member-card::after,
-.placeholder-block::after, .feature::after, .media-tile::after {
+.hc-card::before,
+.goal::before,
+.sponsor::before,
+.member-card::before,
+.placeholder-block::before,
+.feature::before,
+.media-tile::before,
+.hc-card::after,
+.goal::after,
+.sponsor::after,
+.member-card::after,
+.placeholder-block::after,
+.feature::after,
+.media-tile::after {
   content: "";
   position: absolute;
   z-index: 2;
@@ -1489,15 +1544,25 @@ button.reactor-cell:focus-visible {
   height: 12px;
   pointer-events: none;
 }
-.hc-card::before, .goal::before, .sponsor::before, .member-card::before,
-.placeholder-block::before, .feature::before, .media-tile::before {
+.hc-card::before,
+.goal::before,
+.sponsor::before,
+.member-card::before,
+.placeholder-block::before,
+.feature::before,
+.media-tile::before {
   top: 7px;
   right: 7px;
   border-top: 2px solid var(--bracket);
   border-right: 2px solid var(--bracket);
 }
-.hc-card::after, .goal::after, .sponsor::after, .member-card::after,
-.placeholder-block::after, .feature::after, .media-tile::after {
+.hc-card::after,
+.goal::after,
+.sponsor::after,
+.member-card::after,
+.placeholder-block::after,
+.feature::after,
+.media-tile::after {
   bottom: 7px;
   left: 7px;
   border-bottom: 2px solid var(--bracket);
@@ -1505,7 +1570,8 @@ button.reactor-cell:focus-visible {
 }
 
 /* Buttons: press down on click */
-.btn-hc, .btn-hc-outline {
+.btn-hc,
+.btn-hc-outline {
   --bs-btn-border-width: 2px;
   --bs-btn-border-color: var(--edge);
   --bs-btn-hover-border-color: var(--edge);
@@ -1514,20 +1580,25 @@ button.reactor-cell:focus-visible {
   box-shadow: 3px 3px 0 var(--edge);
   transition: transform 0.12s, box-shadow 0.12s, background-color 0.12s;
 }
-.btn-hc:hover, .btn-hc-outline:hover {
+.btn-hc:hover,
+.btn-hc-outline:hover {
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 var(--edge);
 }
-.btn-hc:active, .btn-hc-outline:active {
+.btn-hc:active,
+.btn-hc-outline:active {
   transform: translate(2px, 2px);
   box-shadow: 1px 1px 0 var(--edge);
 }
 
 /* Small pieces */
-.icon-tile, .member-links a, .badge-hc {
+.icon-tile,
+.member-links a,
+.badge-hc {
   border-radius: var(--cut-sm) 0;
 }
-.side-nav a, .theme-toggle {
+.side-nav a,
+.theme-toggle {
   border-radius: var(--cut-sm) 0;
 }
 .brand img {
@@ -1544,7 +1615,10 @@ button.reactor-cell:focus-visible {
   border-radius: var(--cut-lg) 0;
   box-shadow: 8px 8px 0 var(--hard-shadow);
 }
-.reactor-grid, .route-screen, .popup-screen, .flappy-screen {
+.reactor-grid,
+.route-screen,
+.popup-screen,
+.flappy-screen {
   border: 2px solid var(--edge);
   border-radius: var(--cut-md) 0;
 }
